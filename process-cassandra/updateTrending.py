@@ -1,4 +1,5 @@
 import sys
+import os
 import logging
 import time
 from datetime import datetime
@@ -9,9 +10,12 @@ from pyspark.sql import SparkSession
 from pyspark.sql import Row
 import json
 import csv
-sys.path.insert(0, '/home/trantu/Desktop/engine_recommendation.git/trunk/configure/')
-from configureManager import baseConfig
-
+PACKAGE_PARENT = '..'
+SCRIPT_DIR = os.path.dirname(os.path.realpath(os.path.join(os.getcwd(), os.path.expanduser(__file__))))
+sys.path.append(os.path.normpath(os.path.join(SCRIPT_DIR, PACKAGE_PARENT)))
+# sys.path.insert(0, '/home/trantu/Desktop/engine_recommendation.git/trunk/configure/')
+# from configureManager import baseConfig
+from configure.configureManager import baseConfig
 config = baseConfig()
 
 logging.basicConfig(filename=str(config.update_trending)+datetime.now().strftime('%Y_%m_%d_%H_%M_%S.log'),level=logging.DEBUG)
