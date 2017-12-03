@@ -1,0 +1,1083 @@
+DEBUG:py4j.java_gateway:GatewayClient.port is deprecated and will be removed in version 1.0. Use GatewayParameters instead.
+DEBUG:py4j.java_gateway:JavaGateway.auto_convert is deprecated and will be removed in version 1.0. Use GatewayParameters instead.
+DEBUG:py4j.java_gateway:JavaGateway.gateway_client is deprecated and will be removed in version 1.0. Use GatewayParameters instead.
+DEBUG:py4j.java_gateway:Command to send: j
+i
+rj
+org.apache.spark.SparkConf
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: j
+i
+rj
+org.apache.spark.api.java.*
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: j
+i
+rj
+org.apache.spark.api.python.*
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: j
+i
+rj
+org.apache.spark.ml.python.*
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: j
+i
+rj
+org.apache.spark.mllib.api.python.*
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: j
+i
+rj
+org.apache.spark.sql.*
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: j
+i
+rj
+org.apache.spark.sql.hive.*
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: j
+i
+rj
+scala.Tuple2
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: r
+u
+SparkConf
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ycorg.apache.spark.SparkConf
+DEBUG:py4j.java_gateway:Command to send: i
+org.apache.spark.SparkConf
+bTrue
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro0
+DEBUG:py4j.java_gateway:Command to send: c
+o0
+set
+sspark.app.name
+srun cassandra
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro1
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o1
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: c
+o0
+contains
+sspark.serializer.objectStreamReset
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ybfalse
+DEBUG:py4j.java_gateway:Command to send: c
+o0
+set
+sspark.serializer.objectStreamReset
+s100
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro2
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o2
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: c
+o0
+contains
+sspark.rdd.compress
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ybfalse
+DEBUG:py4j.java_gateway:Command to send: c
+o0
+set
+sspark.rdd.compress
+sTrue
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro3
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o3
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: c
+o0
+contains
+sspark.master
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ybtrue
+DEBUG:py4j.java_gateway:Command to send: c
+o0
+contains
+sspark.app.name
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ybtrue
+DEBUG:py4j.java_gateway:Command to send: c
+o0
+contains
+sspark.master
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ybtrue
+DEBUG:py4j.java_gateway:Command to send: c
+o0
+get
+sspark.master
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yslocal[*]
+DEBUG:py4j.java_gateway:Command to send: c
+o0
+contains
+sspark.app.name
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ybtrue
+DEBUG:py4j.java_gateway:Command to send: c
+o0
+get
+sspark.app.name
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ysrun cassandra
+DEBUG:py4j.java_gateway:Command to send: c
+o0
+contains
+sspark.home
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ybfalse
+DEBUG:py4j.java_gateway:Command to send: c
+o0
+getAll
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yto4
+DEBUG:py4j.java_gateway:Command to send: a
+e
+o4
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yi6
+DEBUG:py4j.java_gateway:Command to send: a
+g
+o4
+i0
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro5
+DEBUG:py4j.java_gateway:Command to send: c
+o5
+_1
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ysspark.rdd.compress
+DEBUG:py4j.java_gateway:Command to send: c
+o5
+_2
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ysTrue
+DEBUG:py4j.java_gateway:Command to send: a
+e
+o4
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yi6
+DEBUG:py4j.java_gateway:Command to send: a
+g
+o4
+i1
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro6
+DEBUG:py4j.java_gateway:Command to send: c
+o6
+_1
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ysspark.serializer.objectStreamReset
+DEBUG:py4j.java_gateway:Command to send: c
+o6
+_2
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ys100
+DEBUG:py4j.java_gateway:Command to send: a
+e
+o4
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yi6
+DEBUG:py4j.java_gateway:Command to send: a
+g
+o4
+i2
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro7
+DEBUG:py4j.java_gateway:Command to send: c
+o7
+_1
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ysspark.master
+DEBUG:py4j.java_gateway:Command to send: c
+o7
+_2
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yslocal[*]
+DEBUG:py4j.java_gateway:Command to send: a
+e
+o4
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yi6
+DEBUG:py4j.java_gateway:Command to send: a
+g
+o4
+i3
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro8
+DEBUG:py4j.java_gateway:Command to send: c
+o8
+_1
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ysspark.submit.deployMode
+DEBUG:py4j.java_gateway:Command to send: c
+o8
+_2
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ysclient
+DEBUG:py4j.java_gateway:Command to send: a
+e
+o4
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yi6
+DEBUG:py4j.java_gateway:Command to send: a
+g
+o4
+i4
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro9
+DEBUG:py4j.java_gateway:Command to send: c
+o9
+_1
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ysspark.app.name
+DEBUG:py4j.java_gateway:Command to send: c
+o9
+_2
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ysrun cassandra
+DEBUG:py4j.java_gateway:Command to send: a
+e
+o4
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yi6
+DEBUG:py4j.java_gateway:Command to send: a
+g
+o4
+i5
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro10
+DEBUG:py4j.java_gateway:Command to send: c
+o10
+_1
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ysspark.files
+DEBUG:py4j.java_gateway:Command to send: c
+o10
+_2
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ysfile:/home/trantu/Desktop/engine_recommendation.git/trunk/process-cassandra/updateTrending.py
+DEBUG:py4j.java_gateway:Command to send: a
+e
+o4
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yi6
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o4
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: r
+u
+JavaSparkContext
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ycorg.apache.spark.api.java.JavaSparkContext
+DEBUG:py4j.java_gateway:Command to send: i
+org.apache.spark.api.java.JavaSparkContext
+ro0
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro11
+DEBUG:py4j.java_gateway:Command to send: c
+o11
+sc
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro12
+DEBUG:py4j.java_gateway:Command to send: c
+o12
+conf
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro13
+DEBUG:py4j.java_gateway:Command to send: r
+u
+PythonAccumulatorV2
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ycorg.apache.spark.api.python.PythonAccumulatorV2
+DEBUG:py4j.java_gateway:Command to send: i
+org.apache.spark.api.python.PythonAccumulatorV2
+s127.0.0.1
+i56597
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro14
+DEBUG:py4j.java_gateway:Command to send: c
+o11
+sc
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro15
+DEBUG:py4j.java_gateway:Command to send: c
+o15
+register
+ro14
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: r
+u
+org
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yp
+DEBUG:py4j.java_gateway:Command to send: r
+u
+org.apache
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yp
+DEBUG:py4j.java_gateway:Command to send: r
+u
+org.apache.spark
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yp
+DEBUG:py4j.java_gateway:Command to send: r
+u
+org.apache.spark.SparkFiles
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ycorg.apache.spark.SparkFiles
+DEBUG:py4j.java_gateway:Command to send: r
+m
+org.apache.spark.SparkFiles
+getRootDirectory
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ym
+DEBUG:py4j.java_gateway:Command to send: c
+z:org.apache.spark.SparkFiles
+getRootDirectory
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ys/tmp/spark-db65426d-d437-4dde-b884-436ef1bb47d6/userFiles-3ce68ffe-03ce-4207-b315-3a856dec45e7
+DEBUG:py4j.java_gateway:Command to send: c
+o13
+get
+sspark.submit.pyFiles
+s
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ys
+DEBUG:py4j.java_gateway:Command to send: r
+u
+org
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yp
+DEBUG:py4j.java_gateway:Command to send: r
+u
+org.apache
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yp
+DEBUG:py4j.java_gateway:Command to send: r
+u
+org.apache.spark
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yp
+DEBUG:py4j.java_gateway:Command to send: r
+u
+org.apache.spark.util
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yp
+DEBUG:py4j.java_gateway:Command to send: r
+u
+org.apache.spark.util.Utils
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ycorg.apache.spark.util.Utils
+DEBUG:py4j.java_gateway:Command to send: r
+m
+org.apache.spark.util.Utils
+getLocalDir
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ym
+DEBUG:py4j.java_gateway:Command to send: c
+o11
+sc
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro16
+DEBUG:py4j.java_gateway:Command to send: c
+o16
+conf
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro17
+DEBUG:py4j.java_gateway:Command to send: c
+z:org.apache.spark.util.Utils
+getLocalDir
+ro17
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ys/tmp/spark-db65426d-d437-4dde-b884-436ef1bb47d6
+DEBUG:py4j.java_gateway:Command to send: r
+u
+org
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yp
+DEBUG:py4j.java_gateway:Command to send: r
+u
+org.apache
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yp
+DEBUG:py4j.java_gateway:Command to send: r
+u
+org.apache.spark
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yp
+DEBUG:py4j.java_gateway:Command to send: r
+u
+org.apache.spark.util
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yp
+DEBUG:py4j.java_gateway:Command to send: r
+u
+org.apache.spark.util.Utils
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ycorg.apache.spark.util.Utils
+DEBUG:py4j.java_gateway:Command to send: r
+m
+org.apache.spark.util.Utils
+createTempDir
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ym
+DEBUG:py4j.java_gateway:Command to send: c
+z:org.apache.spark.util.Utils
+createTempDir
+s/tmp/spark-db65426d-d437-4dde-b884-436ef1bb47d6
+spyspark
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro18
+DEBUG:py4j.java_gateway:Command to send: c
+o18
+getAbsolutePath
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ys/tmp/spark-db65426d-d437-4dde-b884-436ef1bb47d6/pyspark-a0026e9b-81fe-4318-9185-5f24acd46f3e
+DEBUG:py4j.java_gateway:Command to send: c
+o13
+get
+sspark.python.profile
+sfalse
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ysfalse
+DEBUG:py4j.java_gateway:Command to send: c
+o13
+set
+sspark.app.name
+srun cassandra
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro19
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o19
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: r
+u
+SparkSession
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ycorg.apache.spark.sql.SparkSession
+DEBUG:py4j.java_gateway:Command to send: c
+o11
+sc
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro20
+DEBUG:py4j.java_gateway:Command to send: i
+org.apache.spark.sql.SparkSession
+ro20
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro21
+DEBUG:py4j.java_gateway:Command to send: c
+o21
+sqlContext
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro22
+DEBUG:py4j.java_gateway:Command to send: c
+o21
+sessionState
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro23
+DEBUG:py4j.java_gateway:Command to send: c
+o23
+conf
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro24
+DEBUG:py4j.java_gateway:Command to send: c
+o24
+setConfString
+sspark.app.name
+srun cassandra
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: c
+o13
+set
+sspark.app.name
+srun cassandra
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro25
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o25
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: c
+o11
+sc
+e
+
+DEBUG:py4j.java_gateway:Answer received: 
+INFO:py4j.java_gateway:Error while receiving.
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 1062, in send_command
+    raise Py4JNetworkError("Answer from Java side is empty")
+Py4JNetworkError: Answer from Java side is empty
+DEBUG:py4j.java_gateway:Exception while shutting down a socket
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 460, in quiet_shutdown
+    socket_instance.shutdown(socket.SHUT_RDWR)
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 107] Transport endpoint is not connected
+ERROR:root:Exception while sending command.
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 908, in send_command
+    response = connection.send_command(command)
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 1067, in send_command
+    "Error while receiving", e, proto.ERROR_ON_RECEIVE)
+Py4JNetworkError: Error while receiving
+DEBUG:py4j.java_gateway:Exception while shutting down a socket
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 460, in quiet_shutdown
+    socket_instance.shutdown(socket.SHUT_RDWR)
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+  File "/usr/lib/python2.7/socket.py", line 174, in _dummy
+    raise error(EBADF, 'Bad file descriptor')
+error: [Errno 9] Bad file descriptor
+ERROR:py4j.java_gateway:An error occurred while trying to connect to the Java server (127.0.0.1:45029)
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 990, in start
+    self.socket.connect((self.address, self.port))
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 111] Connection refused
+DEBUG:py4j.java_gateway:Exception while garbage collecting an object
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 843, in garbage_collect_object
+    "\ne\n")
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 906, in send_command
+    connection = self._get_connection()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 854, in _get_connection
+    connection = self._create_connection()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 860, in _create_connection
+    connection.start()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 997, in start
+    raise Py4JNetworkError(msg, e)
+Py4JNetworkError: An error occurred while trying to connect to the Java server (127.0.0.1:45029)
+DEBUG:py4j.java_gateway:Exception while shutting down a socket
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 460, in quiet_shutdown
+    socket_instance.shutdown(socket.SHUT_RDWR)
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 107] Transport endpoint is not connected
+ERROR:py4j.java_gateway:An error occurred while trying to connect to the Java server (127.0.0.1:45029)
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 990, in start
+    self.socket.connect((self.address, self.port))
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 111] Connection refused
+DEBUG:py4j.java_gateway:Exception while garbage collecting an object
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 843, in garbage_collect_object
+    "\ne\n")
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 906, in send_command
+    connection = self._get_connection()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 854, in _get_connection
+    connection = self._create_connection()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 860, in _create_connection
+    connection.start()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 997, in start
+    raise Py4JNetworkError(msg, e)
+Py4JNetworkError: An error occurred while trying to connect to the Java server (127.0.0.1:45029)
+DEBUG:py4j.java_gateway:Exception while shutting down a socket
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 460, in quiet_shutdown
+    socket_instance.shutdown(socket.SHUT_RDWR)
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 107] Transport endpoint is not connected
+ERROR:py4j.java_gateway:An error occurred while trying to connect to the Java server (127.0.0.1:45029)
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 990, in start
+    self.socket.connect((self.address, self.port))
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 111] Connection refused
+DEBUG:py4j.java_gateway:Exception while garbage collecting an object
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 843, in garbage_collect_object
+    "\ne\n")
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 906, in send_command
+    connection = self._get_connection()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 854, in _get_connection
+    connection = self._create_connection()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 860, in _create_connection
+    connection.start()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 997, in start
+    raise Py4JNetworkError(msg, e)
+Py4JNetworkError: An error occurred while trying to connect to the Java server (127.0.0.1:45029)
+DEBUG:py4j.java_gateway:Exception while shutting down a socket
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 460, in quiet_shutdown
+    socket_instance.shutdown(socket.SHUT_RDWR)
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 107] Transport endpoint is not connected
+ERROR:py4j.java_gateway:An error occurred while trying to connect to the Java server (127.0.0.1:45029)
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 990, in start
+    self.socket.connect((self.address, self.port))
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 111] Connection refused
+DEBUG:py4j.java_gateway:Exception while garbage collecting an object
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 843, in garbage_collect_object
+    "\ne\n")
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 906, in send_command
+    connection = self._get_connection()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 854, in _get_connection
+    connection = self._create_connection()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 860, in _create_connection
+    connection.start()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 997, in start
+    raise Py4JNetworkError(msg, e)
+Py4JNetworkError: An error occurred while trying to connect to the Java server (127.0.0.1:45029)
+DEBUG:py4j.java_gateway:Exception while shutting down a socket
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 460, in quiet_shutdown
+    socket_instance.shutdown(socket.SHUT_RDWR)
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 107] Transport endpoint is not connected
+ERROR:py4j.java_gateway:An error occurred while trying to connect to the Java server (127.0.0.1:45029)
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 990, in start
+    self.socket.connect((self.address, self.port))
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 111] Connection refused
+DEBUG:py4j.java_gateway:Exception while garbage collecting an object
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 843, in garbage_collect_object
+    "\ne\n")
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 906, in send_command
+    connection = self._get_connection()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 854, in _get_connection
+    connection = self._create_connection()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 860, in _create_connection
+    connection.start()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 997, in start
+    raise Py4JNetworkError(msg, e)
+Py4JNetworkError: An error occurred while trying to connect to the Java server (127.0.0.1:45029)
+DEBUG:py4j.java_gateway:Exception while shutting down a socket
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 460, in quiet_shutdown
+    socket_instance.shutdown(socket.SHUT_RDWR)
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 107] Transport endpoint is not connected
+ERROR:py4j.java_gateway:An error occurred while trying to connect to the Java server (127.0.0.1:45029)
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 990, in start
+    self.socket.connect((self.address, self.port))
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 111] Connection refused
+DEBUG:py4j.java_gateway:Exception while garbage collecting an object
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 843, in garbage_collect_object
+    "\ne\n")
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 906, in send_command
+    connection = self._get_connection()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 854, in _get_connection
+    connection = self._create_connection()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 860, in _create_connection
+    connection.start()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 997, in start
+    raise Py4JNetworkError(msg, e)
+Py4JNetworkError: An error occurred while trying to connect to the Java server (127.0.0.1:45029)
+DEBUG:py4j.java_gateway:Exception while shutting down a socket
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 460, in quiet_shutdown
+    socket_instance.shutdown(socket.SHUT_RDWR)
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 107] Transport endpoint is not connected
+ERROR:py4j.java_gateway:An error occurred while trying to connect to the Java server (127.0.0.1:45029)
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 990, in start
+    self.socket.connect((self.address, self.port))
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 111] Connection refused
+DEBUG:py4j.java_gateway:Exception while garbage collecting an object
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 843, in garbage_collect_object
+    "\ne\n")
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 906, in send_command
+    connection = self._get_connection()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 854, in _get_connection
+    connection = self._create_connection()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 860, in _create_connection
+    connection.start()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 997, in start
+    raise Py4JNetworkError(msg, e)
+Py4JNetworkError: An error occurred while trying to connect to the Java server (127.0.0.1:45029)
+DEBUG:py4j.java_gateway:Exception while shutting down a socket
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 460, in quiet_shutdown
+    socket_instance.shutdown(socket.SHUT_RDWR)
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 107] Transport endpoint is not connected
+ERROR:py4j.java_gateway:An error occurred while trying to connect to the Java server (127.0.0.1:45029)
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 990, in start
+    self.socket.connect((self.address, self.port))
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 111] Connection refused
+DEBUG:py4j.java_gateway:Exception while garbage collecting an object
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 843, in garbage_collect_object
+    "\ne\n")
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 906, in send_command
+    connection = self._get_connection()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 854, in _get_connection
+    connection = self._create_connection()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 860, in _create_connection
+    connection.start()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 997, in start
+    raise Py4JNetworkError(msg, e)
+Py4JNetworkError: An error occurred while trying to connect to the Java server (127.0.0.1:45029)
+DEBUG:py4j.java_gateway:Exception while shutting down a socket
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 460, in quiet_shutdown
+    socket_instance.shutdown(socket.SHUT_RDWR)
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 107] Transport endpoint is not connected
+ERROR:py4j.java_gateway:An error occurred while trying to connect to the Java server (127.0.0.1:45029)
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 990, in start
+    self.socket.connect((self.address, self.port))
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 111] Connection refused
+DEBUG:py4j.java_gateway:Exception while garbage collecting an object
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 843, in garbage_collect_object
+    "\ne\n")
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 906, in send_command
+    connection = self._get_connection()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 854, in _get_connection
+    connection = self._create_connection()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 860, in _create_connection
+    connection.start()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 997, in start
+    raise Py4JNetworkError(msg, e)
+Py4JNetworkError: An error occurred while trying to connect to the Java server (127.0.0.1:45029)
+DEBUG:py4j.java_gateway:Exception while shutting down a socket
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 460, in quiet_shutdown
+    socket_instance.shutdown(socket.SHUT_RDWR)
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 107] Transport endpoint is not connected
+ERROR:py4j.java_gateway:An error occurred while trying to connect to the Java server (127.0.0.1:45029)
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 990, in start
+    self.socket.connect((self.address, self.port))
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 111] Connection refused
+DEBUG:py4j.java_gateway:Exception while garbage collecting an object
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 843, in garbage_collect_object
+    "\ne\n")
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 906, in send_command
+    connection = self._get_connection()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 854, in _get_connection
+    connection = self._create_connection()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 860, in _create_connection
+    connection.start()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 997, in start
+    raise Py4JNetworkError(msg, e)
+Py4JNetworkError: An error occurred while trying to connect to the Java server (127.0.0.1:45029)
+DEBUG:py4j.java_gateway:Exception while shutting down a socket
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 460, in quiet_shutdown
+    socket_instance.shutdown(socket.SHUT_RDWR)
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 107] Transport endpoint is not connected
+ERROR:py4j.java_gateway:An error occurred while trying to connect to the Java server (127.0.0.1:45029)
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 990, in start
+    self.socket.connect((self.address, self.port))
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 111] Connection refused
+DEBUG:py4j.java_gateway:Exception while garbage collecting an object
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 843, in garbage_collect_object
+    "\ne\n")
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 906, in send_command
+    connection = self._get_connection()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 854, in _get_connection
+    connection = self._create_connection()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 860, in _create_connection
+    connection.start()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 997, in start
+    raise Py4JNetworkError(msg, e)
+Py4JNetworkError: An error occurred while trying to connect to the Java server (127.0.0.1:45029)
+DEBUG:py4j.java_gateway:Exception while shutting down a socket
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 460, in quiet_shutdown
+    socket_instance.shutdown(socket.SHUT_RDWR)
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 107] Transport endpoint is not connected
+ERROR:py4j.java_gateway:An error occurred while trying to connect to the Java server (127.0.0.1:45029)
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 990, in start
+    self.socket.connect((self.address, self.port))
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 111] Connection refused
+DEBUG:py4j.java_gateway:Exception while garbage collecting an object
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 843, in garbage_collect_object
+    "\ne\n")
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 906, in send_command
+    connection = self._get_connection()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 854, in _get_connection
+    connection = self._create_connection()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 860, in _create_connection
+    connection.start()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 997, in start
+    raise Py4JNetworkError(msg, e)
+Py4JNetworkError: An error occurred while trying to connect to the Java server (127.0.0.1:45029)
+DEBUG:py4j.java_gateway:Exception while shutting down a socket
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 460, in quiet_shutdown
+    socket_instance.shutdown(socket.SHUT_RDWR)
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 107] Transport endpoint is not connected
+ERROR:py4j.java_gateway:An error occurred while trying to connect to the Java server (127.0.0.1:45029)
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 990, in start
+    self.socket.connect((self.address, self.port))
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 111] Connection refused
+DEBUG:py4j.java_gateway:Exception while garbage collecting an object
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 843, in garbage_collect_object
+    "\ne\n")
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 906, in send_command
+    connection = self._get_connection()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 854, in _get_connection
+    connection = self._create_connection()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 860, in _create_connection
+    connection.start()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 997, in start
+    raise Py4JNetworkError(msg, e)
+Py4JNetworkError: An error occurred while trying to connect to the Java server (127.0.0.1:45029)
+DEBUG:py4j.java_gateway:Exception while shutting down a socket
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 460, in quiet_shutdown
+    socket_instance.shutdown(socket.SHUT_RDWR)
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 107] Transport endpoint is not connected
+ERROR:py4j.java_gateway:An error occurred while trying to connect to the Java server (127.0.0.1:45029)
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 990, in start
+    self.socket.connect((self.address, self.port))
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 111] Connection refused
+DEBUG:py4j.java_gateway:Exception while garbage collecting an object
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 843, in garbage_collect_object
+    "\ne\n")
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 906, in send_command
+    connection = self._get_connection()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 854, in _get_connection
+    connection = self._create_connection()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 860, in _create_connection
+    connection.start()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 997, in start
+    raise Py4JNetworkError(msg, e)
+Py4JNetworkError: An error occurred while trying to connect to the Java server (127.0.0.1:45029)
+DEBUG:py4j.java_gateway:Exception while shutting down a socket
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 460, in quiet_shutdown
+    socket_instance.shutdown(socket.SHUT_RDWR)
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 107] Transport endpoint is not connected
+ERROR:py4j.java_gateway:An error occurred while trying to connect to the Java server (127.0.0.1:45029)
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 990, in start
+    self.socket.connect((self.address, self.port))
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 111] Connection refused
+DEBUG:py4j.java_gateway:Exception while garbage collecting an object
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 843, in garbage_collect_object
+    "\ne\n")
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 906, in send_command
+    connection = self._get_connection()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 854, in _get_connection
+    connection = self._create_connection()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 860, in _create_connection
+    connection.start()
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 997, in start
+    raise Py4JNetworkError(msg, e)
+Py4JNetworkError: An error occurred while trying to connect to the Java server (127.0.0.1:45029)
+DEBUG:py4j.java_gateway:Exception while shutting down a socket
+Traceback (most recent call last):
+  File "/home/trantu/Desktop/spark/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 460, in quiet_shutdown
+    socket_instance.shutdown(socket.SHUT_RDWR)
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 107] Transport endpoint is not connected
