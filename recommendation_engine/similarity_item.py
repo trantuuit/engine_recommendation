@@ -103,16 +103,16 @@ if __name__ == "__main__":
     .appName("Similarity-item")\
     .getOrCreate()
 
-    if len(sys.argv) != 5:
+    if len(sys.argv) != 3:
         log.error("+------------------------------------------------------+")
         log.error("+-----------------------Error path---------------------+")
         log.error("+------------------------------------------------------+")
-        print("Usage: similarity <path_input> <path_output> <num> <numtop>", file=sys.stderr)
+        print("Usage: similarity <path_input> <path_output>", file=sys.stderr)
         exit(-1)
     path_input = sys.argv[1]
     path_output = sys.argv[2]
-    num = sys.argv[3]
-    numtop = sys.argv[4]
+    num = int(config.offsets)
+    numtop = int(config.top_moive)
 
     start = time.time()
     # raw_data = pd.read_csv("data/movies_26.csv", names = ["movieId", "title", "genres"])

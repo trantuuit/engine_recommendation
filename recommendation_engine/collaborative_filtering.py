@@ -8,7 +8,7 @@ if sys.version >= '3':
 from pyspark.sql import SparkSession
 
 
-from pyspark.ml.evaluation import RegressionEvaluator
+# from pyspark.ml.evaluation import RegressionEvaluator
 from pyspark.ml.recommendation import ALS
 from pyspark.sql import Row
 from time import time
@@ -18,6 +18,7 @@ import csv
 import os
 import logging
 from datetime import datetime
+import numpy
 
 PACKAGE_PARENT = '..'
 SCRIPT_DIR = os.path.dirname(os.path.realpath(os.path.join(os.getcwd(), os.path.expanduser(__file__))))
