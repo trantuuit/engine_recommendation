@@ -15,8 +15,8 @@ SCRIPT_DIR = os.path.dirname(os.path.realpath(os.path.join(os.getcwd(), os.path.
 sys.path.append(os.path.normpath(os.path.join(SCRIPT_DIR, PACKAGE_PARENT)))
 # sys.path.insert(0, '/home/trantu/Desktop/engine_recommendation.git/trunk/configure/')
 # from configureManager import baseConfig
-from configure.configureManager import baseConfig
-config = baseConfig()
+from configure.configureManager import updateTrendingConfig
+config = updateTrendingConfig()
 
 logging.basicConfig(filename=str(config.update_trending)+datetime.now().strftime('%Y_%m_%d_%H_%M_%S.log'),level=logging.DEBUG)
 # logging.basicConfig(filename=datetime.now().strftime('%Y_%m_%d.log'),level=logging.DEBUG)
@@ -32,8 +32,8 @@ formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(messag
 ch.setFormatter(formatter)
 # add ch to logger
 log.addHandler(ch)
-reload(sys)
-sys.setdefaultencoding('utf-8')
+
+
 KEYSPACE_IMDB_MOVIE = "db"
 def getValue(value):
     
