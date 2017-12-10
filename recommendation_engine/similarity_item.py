@@ -66,27 +66,27 @@ def _train(path_input, path_output, numrow, numtop):
         count = int(int(totalRow)/int(numrow))
         print('--count: %s' %count)
         remain = int(totalRow) - int(count) * int(numrow)
-        while( index < count ):
+        while( index < count + 1):
             print('--index: %s' %index)
             begin = index * int(numrow)
-            print('---begin: %s' %(begin))
-            if ( index == count - 1 ):
+            # print('---begin: %s' %(begin))
+            if ( index == count ):
                 if int(remain) == 0:
                     end = begin + int(numrow)
-                    print('---end:%s' %(end))
+                    # print('---end:%s' %(end))
                 else:
                     print('--remain: %s' %(remain))
                     end = begin + int(remain)
             else:     
                 end = begin + int(numrow)
-                print('---end:%s' %(end))
-            # cosine_similarities = linear_kernel(tfidf_matrix, tfidf_matrix[begin:end])
-            print(tfidf_matrix[begin:end])
+                # print('---end:%s' %(end))
+
+            # print(tfidf_matrix[begin:end])
             print('----begin: %s, end: %s' %(begin,end))
             cosine_similarities = linear_kernel(tfidf_matrix[begin:end],tfidf_matrix)
             i = 0
             for idx in range(begin,end):
-                print('---idx: %s----' %idx)
+                # print('---idx: %s----' %idx)
                 similar_indices = cosine_similarities[i].argsort()[:-int(numtop):-1]
                 similar_items = [str(path_input['movieId'][idx])]
                 for j in similar_indices:
@@ -108,6 +108,8 @@ if __name__ == "__main__":
         log.error("+-----------------------Error path---------------------+")
         log.error("+------------------------------------------------------+")
         print("Usage: similarity <path_input> <path_output>", file=sys.stderr)
+        # spark-submit recommendation_engine/similarity_item.py meta-data/movie_test.csv 
+        # output-data/similarity-item/result4.csv
         exit(-1)
     path_input = sys.argv[1]
     path_output = sys.argv[2]
