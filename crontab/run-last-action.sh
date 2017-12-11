@@ -1,0 +1,5 @@
+#!/bin/bash
+cd $HOME/Desktop/engine_recommendation.git/trunk/output-data/last-action/
+rm -r result.csv
+spark-submit  $HOME/Desktop/engine_recommendation.git/trunk/recommendation_engine/last_action.py $HOME/Desktop/engine_recommendation.git/trunk/meta-data/ratings_20.txt $HOME/Desktop/engine_recommendation.git/trunk/output-data/last-action/last-action.csv && spark-submit $HOME/Desktop/engine_recommendation.git/trunk/process-cassandra/updateLastAction.py $HOME/Desktop/engine_recommendation.git/trunk/output-data/last-action/last-action.csv
+# spark-submit $HOME/Desktop/engine_recommendation.git/trunk/recommendation_engine/last-action.py $HOME/Desktop/engine_recommendation.git/trunk/meta-data/ratings_20.txt $HOME/Desktop/engine_recommendation.git/trunk/output-data/last-action/result.csv && spark-submit $HOME/Desktop/engine_recommendation.git/trunk/process-cassandra/updateLastAction.py $HOME/Desktop/engine_recommendation.git/trunk/output-data/last-action/result.csv
