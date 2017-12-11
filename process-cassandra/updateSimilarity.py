@@ -10,6 +10,7 @@ from pyspark.sql import SparkSession
 from pyspark.sql import Row
 import json
 import csv
+
 PACKAGE_PARENT = '..'
 SCRIPT_DIR = os.path.dirname(os.path.realpath(os.path.join(os.getcwd(), os.path.expanduser(__file__))))
 sys.path.append(os.path.normpath(os.path.join(SCRIPT_DIR, PACKAGE_PARENT)))
@@ -80,7 +81,6 @@ def insertResultSimilarity(path_input):
         for i in reader:
             movieId = i[0]
             recommendations = i[1:]
-            string =''
             array = []
             for j in recommendations:
                 array.append(j)
