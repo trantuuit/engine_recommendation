@@ -40,6 +40,12 @@ class lastActionConfig(baseConfig):
         self.path_log_update = self.config['last-action-default']['path-log-update']
         self.top_moive = self.config['last-action-default']['top-movie']
 
+class whatIsPopularConfig(baseConfig):
+    def __init__(self):
+        super().__init__()
+        self.path_log_process = self.config['what-is-popular-default']['path-log-process-data']
+        self.path_log_update = self.config['what-is-popular-default']['path-log-update']
+        self.top_moive = self.config['what-is-popular-default']['top-movie']
 
 if __name__ == '__main__':
     a = collaborativeConfig()

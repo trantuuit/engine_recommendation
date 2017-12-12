@@ -1,0 +1,1511 @@
+DEBUG:py4j.java_gateway:GatewayClient.port is deprecated and will be removed in version 1.0. Use GatewayParameters instead.
+DEBUG:py4j.java_gateway:JavaGateway.auto_convert is deprecated and will be removed in version 1.0. Use GatewayParameters instead.
+DEBUG:py4j.java_gateway:JavaGateway.gateway_client is deprecated and will be removed in version 1.0. Use GatewayParameters instead.
+DEBUG:py4j.java_gateway:Command to send: j
+i
+rj
+org.apache.spark.SparkConf
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: j
+i
+rj
+org.apache.spark.api.java.*
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: j
+i
+rj
+org.apache.spark.api.python.*
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: j
+i
+rj
+org.apache.spark.ml.python.*
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: j
+i
+rj
+org.apache.spark.mllib.api.python.*
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: j
+i
+rj
+org.apache.spark.sql.*
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: j
+i
+rj
+org.apache.spark.sql.hive.*
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: j
+i
+rj
+scala.Tuple2
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: r
+u
+SparkConf
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ycorg.apache.spark.SparkConf
+DEBUG:py4j.java_gateway:Command to send: i
+org.apache.spark.SparkConf
+bTrue
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro0
+DEBUG:py4j.java_gateway:Command to send: c
+o0
+set
+sspark.app.name
+swhat is popular
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro1
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o1
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: c
+o0
+contains
+sspark.serializer.objectStreamReset
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ybfalse
+DEBUG:py4j.java_gateway:Command to send: c
+o0
+set
+sspark.serializer.objectStreamReset
+s100
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro2
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o2
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: c
+o0
+contains
+sspark.rdd.compress
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ybfalse
+DEBUG:py4j.java_gateway:Command to send: c
+o0
+set
+sspark.rdd.compress
+sTrue
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro3
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o3
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: c
+o0
+contains
+sspark.master
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ybtrue
+DEBUG:py4j.java_gateway:Command to send: c
+o0
+contains
+sspark.app.name
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ybtrue
+DEBUG:py4j.java_gateway:Command to send: c
+o0
+contains
+sspark.master
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ybtrue
+DEBUG:py4j.java_gateway:Command to send: c
+o0
+get
+sspark.master
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yslocal[*]
+DEBUG:py4j.java_gateway:Command to send: c
+o0
+contains
+sspark.app.name
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ybtrue
+DEBUG:py4j.java_gateway:Command to send: c
+o0
+get
+sspark.app.name
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yswhat is popular
+DEBUG:py4j.java_gateway:Command to send: c
+o0
+contains
+sspark.home
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ybfalse
+DEBUG:py4j.java_gateway:Command to send: c
+o0
+getAll
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yto4
+DEBUG:py4j.java_gateway:Command to send: a
+e
+o4
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yi6
+DEBUG:py4j.java_gateway:Command to send: a
+g
+o4
+i0
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro5
+DEBUG:py4j.java_gateway:Command to send: c
+o5
+_1
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ysspark.files
+DEBUG:py4j.java_gateway:Command to send: c
+o5
+_2
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ysfile:/home/tutn6/Desktop/engine_recommendation.git/trunk/recommendation_engine/what_is_popular.py
+DEBUG:py4j.java_gateway:Command to send: a
+e
+o4
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yi6
+DEBUG:py4j.java_gateway:Command to send: a
+g
+o4
+i1
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro6
+DEBUG:py4j.java_gateway:Command to send: c
+o6
+_1
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ysspark.rdd.compress
+DEBUG:py4j.java_gateway:Command to send: c
+o6
+_2
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ysTrue
+DEBUG:py4j.java_gateway:Command to send: a
+e
+o4
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yi6
+DEBUG:py4j.java_gateway:Command to send: a
+g
+o4
+i2
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro7
+DEBUG:py4j.java_gateway:Command to send: c
+o7
+_1
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ysspark.serializer.objectStreamReset
+DEBUG:py4j.java_gateway:Command to send: c
+o7
+_2
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ys100
+DEBUG:py4j.java_gateway:Command to send: a
+e
+o4
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yi6
+DEBUG:py4j.java_gateway:Command to send: a
+g
+o4
+i3
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro8
+DEBUG:py4j.java_gateway:Command to send: c
+o8
+_1
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ysspark.master
+DEBUG:py4j.java_gateway:Command to send: c
+o8
+_2
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yslocal[*]
+DEBUG:py4j.java_gateway:Command to send: a
+e
+o4
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yi6
+DEBUG:py4j.java_gateway:Command to send: a
+g
+o4
+i4
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro9
+DEBUG:py4j.java_gateway:Command to send: c
+o9
+_1
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ysspark.app.name
+DEBUG:py4j.java_gateway:Command to send: c
+o9
+_2
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yswhat is popular
+DEBUG:py4j.java_gateway:Command to send: a
+e
+o4
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yi6
+DEBUG:py4j.java_gateway:Command to send: a
+g
+o4
+i5
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro10
+DEBUG:py4j.java_gateway:Command to send: c
+o10
+_1
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ysspark.submit.deployMode
+DEBUG:py4j.java_gateway:Command to send: c
+o10
+_2
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ysclient
+DEBUG:py4j.java_gateway:Command to send: a
+e
+o4
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yi6
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o4
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: r
+u
+JavaSparkContext
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ycorg.apache.spark.api.java.JavaSparkContext
+DEBUG:py4j.java_gateway:Command to send: i
+org.apache.spark.api.java.JavaSparkContext
+ro0
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro11
+DEBUG:py4j.java_gateway:Command to send: c
+o11
+sc
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro12
+DEBUG:py4j.java_gateway:Command to send: c
+o12
+conf
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro13
+DEBUG:py4j.java_gateway:Command to send: r
+u
+PythonAccumulatorV2
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ycorg.apache.spark.api.python.PythonAccumulatorV2
+DEBUG:py4j.java_gateway:Command to send: i
+org.apache.spark.api.python.PythonAccumulatorV2
+s127.0.0.1
+i42120
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro14
+DEBUG:py4j.java_gateway:Command to send: c
+o11
+sc
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro15
+DEBUG:py4j.java_gateway:Command to send: c
+o15
+register
+ro14
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: r
+u
+org
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yp
+DEBUG:py4j.java_gateway:Command to send: r
+u
+org.apache
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yp
+DEBUG:py4j.java_gateway:Command to send: r
+u
+org.apache.spark
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yp
+DEBUG:py4j.java_gateway:Command to send: r
+u
+org.apache.spark.SparkFiles
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ycorg.apache.spark.SparkFiles
+DEBUG:py4j.java_gateway:Command to send: r
+m
+org.apache.spark.SparkFiles
+getRootDirectory
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ym
+DEBUG:py4j.java_gateway:Command to send: c
+z:org.apache.spark.SparkFiles
+getRootDirectory
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ys/tmp/spark-eaa97682-ccf8-4012-a748-7f770643bfca/userFiles-780d548a-7dfb-49a0-a2e3-63be5b2df4e9
+DEBUG:py4j.java_gateway:Command to send: c
+o13
+get
+sspark.submit.pyFiles
+s
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ys
+DEBUG:py4j.java_gateway:Command to send: r
+u
+org
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yp
+DEBUG:py4j.java_gateway:Command to send: r
+u
+org.apache
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yp
+DEBUG:py4j.java_gateway:Command to send: r
+u
+org.apache.spark
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yp
+DEBUG:py4j.java_gateway:Command to send: r
+u
+org.apache.spark.util
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yp
+DEBUG:py4j.java_gateway:Command to send: r
+u
+org.apache.spark.util.Utils
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ycorg.apache.spark.util.Utils
+DEBUG:py4j.java_gateway:Command to send: r
+m
+org.apache.spark.util.Utils
+getLocalDir
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ym
+DEBUG:py4j.java_gateway:Command to send: c
+o11
+sc
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro16
+DEBUG:py4j.java_gateway:Command to send: c
+o16
+conf
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro17
+DEBUG:py4j.java_gateway:Command to send: c
+z:org.apache.spark.util.Utils
+getLocalDir
+ro17
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ys/tmp/spark-eaa97682-ccf8-4012-a748-7f770643bfca
+DEBUG:py4j.java_gateway:Command to send: r
+u
+org
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yp
+DEBUG:py4j.java_gateway:Command to send: r
+u
+org.apache
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yp
+DEBUG:py4j.java_gateway:Command to send: r
+u
+org.apache.spark
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yp
+DEBUG:py4j.java_gateway:Command to send: r
+u
+org.apache.spark.util
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yp
+DEBUG:py4j.java_gateway:Command to send: r
+u
+org.apache.spark.util.Utils
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ycorg.apache.spark.util.Utils
+DEBUG:py4j.java_gateway:Command to send: r
+m
+org.apache.spark.util.Utils
+createTempDir
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ym
+DEBUG:py4j.java_gateway:Command to send: c
+z:org.apache.spark.util.Utils
+createTempDir
+s/tmp/spark-eaa97682-ccf8-4012-a748-7f770643bfca
+spyspark
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro18
+DEBUG:py4j.java_gateway:Command to send: c
+o18
+getAbsolutePath
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ys/tmp/spark-eaa97682-ccf8-4012-a748-7f770643bfca/pyspark-fcd112ab-7680-4ada-88a0-8db4fef53fbd
+DEBUG:py4j.java_gateway:Command to send: c
+o13
+get
+sspark.python.profile
+sfalse
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ysfalse
+DEBUG:py4j.java_gateway:Command to send: c
+o13
+set
+sspark.app.name
+swhat is popular
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro19
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o19
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: r
+u
+SparkSession
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ycorg.apache.spark.sql.SparkSession
+DEBUG:py4j.java_gateway:Command to send: c
+o11
+sc
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro20
+DEBUG:py4j.java_gateway:Command to send: i
+org.apache.spark.sql.SparkSession
+ro20
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro21
+DEBUG:py4j.java_gateway:Command to send: c
+o21
+sqlContext
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro22
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o0
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o5
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o6
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o7
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o8
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o9
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o10
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o12
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o15
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o16
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o17
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o18
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o20
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: c
+o21
+sessionState
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro23
+DEBUG:py4j.java_gateway:Command to send: c
+o23
+conf
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro24
+DEBUG:py4j.java_gateway:Command to send: c
+o24
+setConfString
+sspark.app.name
+swhat is popular
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: c
+o13
+set
+sspark.app.name
+swhat is popular
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro25
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o25
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+INFO:last-action-process:+------------------------------------------------------+
+INFO:last-action-process:+-----------------------BEGIN PROCESS------------------+
+INFO:last-action-process:+------------------------------------------------------+
+DEBUG:py4j.java_gateway:Command to send: c
+o22
+read
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro26
+DEBUG:py4j.java_gateway:Command to send: c
+o26
+format
+scom.databricks.spark.csv
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro27
+DEBUG:py4j.java_gateway:Command to send: c
+o27
+option
+sheader
+strue
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro28
+DEBUG:py4j.java_gateway:Command to send: c
+o28
+load
+smeta-data/movies.csv
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro29
+DEBUG:py4j.java_gateway:Command to send: c
+o29
+javaToPython
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro30
+DEBUG:py4j.java_gateway:Command to send: c
+o30
+id
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yi11
+DEBUG:py4j.java_gateway:Command to send: c
+o22
+read
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro31
+DEBUG:py4j.java_gateway:Command to send: r
+u
+PythonUtils
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ycorg.apache.spark.api.python.PythonUtils
+DEBUG:py4j.java_gateway:Command to send: r
+m
+org.apache.spark.api.python.PythonUtils
+toSeq
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ym
+DEBUG:py4j.java_gateway:Command to send: i
+java.util.ArrayList
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ylo32
+DEBUG:py4j.java_gateway:Command to send: c
+o32
+add
+smeta-data/ratings_20.txt
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ybtrue
+DEBUG:py4j.java_gateway:Command to send: c
+z:org.apache.spark.api.python.PythonUtils
+toSeq
+ro32
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro33
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o32
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: c
+o31
+text
+ro33
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro34
+DEBUG:py4j.java_gateway:Command to send: c
+o34
+javaToPython
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro35
+DEBUG:py4j.java_gateway:Command to send: c
+o35
+id
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yi15
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o23
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o24
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o26
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o27
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o28
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o29
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o31
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o33
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o34
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: c
+o35
+partitions
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ylo36
+DEBUG:py4j.java_gateway:Command to send: c
+o36
+size
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yi4
+DEBUG:py4j.java_gateway:Command to send: r
+u
+PythonRDD
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ycorg.apache.spark.api.python.PythonRDD
+DEBUG:py4j.java_gateway:Command to send: r
+m
+org.apache.spark.api.python.PythonRDD
+runJob
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ym
+DEBUG:py4j.java_gateway:Command to send: c
+o11
+sc
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro37
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o36
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: r
+u
+PythonFunction
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ycorg.apache.spark.api.python.PythonFunction
+DEBUG:py4j.java_gateway:Command to send: i
+java.util.HashMap
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yao38
+DEBUG:py4j.java_gateway:Command to send: c
+o38
+put
+sPYTHONHASHSEED
+s0
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yn
+DEBUG:py4j.java_gateway:Command to send: i
+java.util.ArrayList
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ylo39
+DEBUG:py4j.java_gateway:Command to send: i
+java.util.ArrayList
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ylo40
+DEBUG:py4j.java_gateway:Command to send: i
+org.apache.spark.api.python.PythonFunction
+jgAIoY3B5c3BhcmsuY2xvdWRwaWNrbGUKX2ZpbGxfZnVuY3Rpb24KcQAoY3B5c3BhcmsuY2xvdWRwaWNrbGUKX21ha2Vfc2tlbF9mdW5jCnEBY3B5c3BhcmsuY2xvdWRwaWNrbGUKX2J1aWx0aW5fdHlwZQpxAlgIAAAAQ29kZVR5cGVxA4VxBFJxBShLAksASwJLBUsTY19jb2RlY3MKZW5jb2RlCnEGWBoAAADCiAAAfAAAwogBAHwAAHwBAMKDAgDCgwIAU3EHWAYAAABsYXRpbjFxCIZxCVJxCk6FcQspWAUAAABzcGxpdHEMWAgAAABpdGVyYXRvcnENhnEOWEUAAAAvaG9tZS90dXRuNi9EZXNrdG9wL3NwYXJrLTIuMi4wL3B5dGhvbi9saWIvcHlzcGFyay56aXAvcHlzcGFyay9yZGQucHlxD1gNAAAAcGlwZWxpbmVfZnVuY3EQTXYJaAZYAgAAAAABcRFoCIZxElJxE1gEAAAAZnVuY3EUWAkAAABwcmV2X2Z1bmNxFYZxFil0cRdScRhdcRkoaAAoaAFoBShLAksASwJLAksTaAZYDAAAAMKIAAB8AQDCgwEAU3EaaAiGcRtScRxOhXEdKVgBAAAAc3EeaA2GcR9oD2gUTVkBaAZYAgAAAAABcSBoCIZxIVJxIlgBAAAAZnEjhXEkKXRxJVJxJl1xJ2gAKGgBaAUoSwFLAEsCSwJLM2gGWEEAAAB0AAB8AADCgwEAfQAAZAEAfQEAeCUAfAEAwogAAGsAAHI5AHQBAHwAAMKDAQBWAXwBAGQCADd9AQBxFQBXZAAAU3EoaAiGcSlScSpOSwBLAYdxK1gEAAAAaXRlcnEsWAQAAABuZXh0cS2GcS5oDVgFAAAAdGFrZW5xL4ZxMGgPWA8AAAB0YWtlVXBUb051bUxlZnRxMU03BWgGWAoAAAAAAQwBBgEPAQsBcTJoCIZxM1JxNFgEAAAAbGVmdHE1hXE2KXRxN1JxOF1xOUsBYX1xOodxO1JxPH1xPU59cT5YCwAAAHB5c3BhcmsucmRkcT90UmFoOodxQFJxQX1xQk59cUNoP3RSaAAoaAFoGF1xRChoAChoAWgFKEsCSwBLAksDSxNoBlgPAAAAdAAAwogAAHwBAMKDAgBTcUVoCIZxRlJxR06FcUhYAwAAAG1hcHFJhXFKWAEAAABfcUtoDYZxTGgPaBRNPQFoBlgCAAAAAAFxTWgIhnFOUnFPaCOFcVApdHFRUnFSXXFTaAAoaAFoBShLAUsASwFLAUtTaAZYBAAAAHwAAFNxVGgIhnFVUnFWToVxVylYAwAAAG9ianFYhXFZWE0AAAAvaG9tZS90dXRuNi9EZXNrdG9wL3NwYXJrLTIuMi4wL3B5dGhvbi9saWIvcHlzcGFyay56aXAvcHlzcGFyay9zcWwvc2Vzc2lvbi5weXFaWAgAAAA8bGFtYmRhPnFbTRQCY19fYnVpbHRpbl9fCmJ5dGVzCnFcKVJxXSkpdHFeUnFfXXFgfXFhh3FiUnFjfXFkTn1xZVgTAAAAcHlzcGFyay5zcWwuc2Vzc2lvbnFmdFJhaDqHcWdScWh9cWlOfXFqaD90UmgAKGgBaBhdcWsoaAAoaAFoUl1xbGgAKGgBaAUoSwFLAEsBSwVLU2gGWB8AAAB0AABkAQB0AQB8AABkAgAZwoMBAGQDAGQCAMKDAAJTcW1oCIZxblJxbyhOWAsAAABtb3ZpZV9pbmRleHFwSwFYBQAAAGNvdW50cXF0cXJYAwAAAFJvd3FzWAMAAABpbnRxdIZxdVgBAAAAeHF2hXF3WFwAAAAvaG9tZS90dXRuNi9EZXNrdG9wL2VuZ2luZV9yZWNvbW1lbmRhdGlvbi5naXQvdHJ1bmsvcmVjb21tZW5kYXRpb25fZW5naW5lL3doYXRfaXNfcG9wdWxhci5weXF4aFtLOWhcKVJxeSkpdHF6UnF7XXF8fXF9h3F+UnF/fXGAaHNjcHlzcGFyay5zcWwudHlwZXMKUm93CnGBc059cYJYCAAAAF9fbWFpbl9fcYN0UmFoOodxhFJxhX1xhk59cYdoP3RSaAAoaAFoUl1xiGgAKGgBaAUoSwFLAEsBSwJLU2gGWBEAAAB8AABqAABqAQBkAQDCgwEAU3GJaAiGcYpScYtOWAEAAAAscYyGcY1YBQAAAHZhbHVlcY5oDIZxj1gDAAAAcm93cZCFcZFoeGhbSzhoXClScZIpKXRxk1JxlF1xlWh9h3GWUnGXfXGYTn1xmWiDdFJhaDqHcZpScZt9cZxOfXGdaD90UmVoOodxnlJxn31xoE59caFoP3RSZWg6h3GiUnGjfXGkTn1xpWg/dFJlaDqHcaZScad9cahOfXGpaD90Uk5jcHlzcGFyay5zZXJpYWxpemVycwpCYXRjaGVkU2VyaWFsaXplcgpxqimBcat9cawoWAkAAABiYXRjaFNpemVxrUr/////WAoAAABzZXJpYWxpemVyca5jcHlzcGFyay5zZXJpYWxpemVycwpQaWNrbGVTZXJpYWxpemVyCnGvKYFxsH1xsVgTAAAAX29ubHlfd3JpdGVfc3RyaW5nc3GyiXNidWJjcHlzcGFyay5zZXJpYWxpemVycwpBdXRvQmF0Y2hlZFNlcmlhbGl6ZXIKcbMpgXG0fXG1KGitSwBormivKYFxtn1xt2iyiXNiWAgAAABiZXN0U2l6ZXG4SgAAAQB1YnRxuS4=
+ro38
+ro39
+spython3.4
+s3.4
+ro40
+ro14
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro41
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o38
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o39
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o40
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: r
+u
+PythonRDD
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ycorg.apache.spark.api.python.PythonRDD
+DEBUG:py4j.java_gateway:Command to send: c
+o35
+rdd
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro42
+DEBUG:py4j.java_gateway:Command to send: i
+org.apache.spark.api.python.PythonRDD
+ro42
+ro41
+bFalse
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro43
+DEBUG:py4j.java_gateway:Command to send: c
+o43
+asJavaRDD
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro44
+DEBUG:py4j.java_gateway:Command to send: i
+java.util.ArrayList
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ylo45
+DEBUG:py4j.java_gateway:Command to send: c
+o45
+add
+i0
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ybtrue
+DEBUG:py4j.java_gateway:Command to send: c
+z:org.apache.spark.api.python.PythonRDD
+runJob
+ro37
+ro44
+ro45
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yi45768
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o45
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: r
+u
+SerDeUtil
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ycorg.apache.spark.api.python.SerDeUtil
+DEBUG:py4j.java_gateway:Command to send: r
+m
+org.apache.spark.api.python.SerDeUtil
+toJavaArray
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ym
+DEBUG:py4j.java_gateway:Command to send: r
+u
+SerDeUtil
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ycorg.apache.spark.api.python.SerDeUtil
+DEBUG:py4j.java_gateway:Command to send: r
+m
+org.apache.spark.api.python.SerDeUtil
+pythonToJava
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ym
+DEBUG:py4j.java_gateway:Command to send: r
+u
+PythonFunction
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ycorg.apache.spark.api.python.PythonFunction
+DEBUG:py4j.java_gateway:Command to send: i
+java.util.HashMap
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yao46
+DEBUG:py4j.java_gateway:Command to send: c
+o46
+put
+sPYTHONHASHSEED
+s0
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yn
+DEBUG:py4j.java_gateway:Command to send: i
+java.util.ArrayList
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ylo47
+DEBUG:py4j.java_gateway:Command to send: i
+java.util.ArrayList
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ylo48
+DEBUG:py4j.java_gateway:Command to send: i
+org.apache.spark.api.python.PythonFunction
+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
+ro46
+ro47
+spython3.4
+s3.4
+ro48
+ro14
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro49
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o46
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o47
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o48
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: r
+u
+PythonRDD
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ycorg.apache.spark.api.python.PythonRDD
+DEBUG:py4j.java_gateway:Command to send: c
+o35
+rdd
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro50
+DEBUG:py4j.java_gateway:Command to send: i
+org.apache.spark.api.python.PythonRDD
+ro50
+ro49
+bFalse
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro51
+DEBUG:py4j.java_gateway:Command to send: c
+o51
+asJavaRDD
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro52
+DEBUG:py4j.java_gateway:Command to send: c
+z:org.apache.spark.api.python.SerDeUtil
+pythonToJava
+ro52
+bTrue
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro53
+DEBUG:py4j.java_gateway:Command to send: c
+z:org.apache.spark.api.python.SerDeUtil
+toJavaArray
+ro53
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro54
+DEBUG:py4j.java_gateway:Command to send: c
+o54
+rdd
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro55
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o41
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o42
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o43
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o44
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o49
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o50
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o51
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o53
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: c
+o21
+applySchemaToPythonRDD
+ro55
+s{"fields":[{"metadata":{},"name":"count","nullable":true,"type":"long"},{"metadata":{},"name":"movie_index","nullable":true,"type":"long"}],"type":"struct"}
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro56
+DEBUG:py4j.java_gateway:Command to send: r
+u
+functions
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ycorg.apache.spark.sql.functions
+DEBUG:py4j.java_gateway:Command to send: r
+m
+org.apache.spark.sql.functions
+col
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ym
+DEBUG:py4j.java_gateway:Command to send: c
+z:org.apache.spark.sql.functions
+col
+smovie_index
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro57
+DEBUG:py4j.java_gateway:Command to send: r
+u
+PythonUtils
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ycorg.apache.spark.api.python.PythonUtils
+DEBUG:py4j.java_gateway:Command to send: r
+m
+org.apache.spark.api.python.PythonUtils
+toSeq
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ym
+DEBUG:py4j.java_gateway:Command to send: i
+java.util.ArrayList
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ylo58
+DEBUG:py4j.java_gateway:Command to send: c
+o58
+add
+ro57
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ybtrue
+DEBUG:py4j.java_gateway:Command to send: c
+z:org.apache.spark.api.python.PythonUtils
+toSeq
+ro58
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro59
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o58
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: c
+o56
+groupBy
+ro59
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro60
+DEBUG:py4j.java_gateway:Command to send: c
+o60
+count
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro61
+DEBUG:py4j.java_gateway:Command to send: r
+u
+functions
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ycorg.apache.spark.sql.functions
+DEBUG:py4j.java_gateway:Command to send: r
+m
+org.apache.spark.sql.functions
+col
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ym
+DEBUG:py4j.java_gateway:Command to send: c
+z:org.apache.spark.sql.functions
+col
+scount
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro62
+DEBUG:py4j.java_gateway:Command to send: c
+o62
+desc
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro63
+DEBUG:py4j.java_gateway:Command to send: r
+u
+PythonUtils
+rj
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ycorg.apache.spark.api.python.PythonUtils
+DEBUG:py4j.java_gateway:Command to send: r
+m
+org.apache.spark.api.python.PythonUtils
+toSeq
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ym
+DEBUG:py4j.java_gateway:Command to send: i
+java.util.ArrayList
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ylo64
+DEBUG:py4j.java_gateway:Command to send: c
+o64
+add
+ro63
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ybtrue
+DEBUG:py4j.java_gateway:Command to send: c
+z:org.apache.spark.api.python.PythonUtils
+toSeq
+ro64
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro65
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o64
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: c
+o61
+sort
+ro65
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yro66
+DEBUG:py4j.java_gateway:Command to send: c
+o66
+showString
+i20
+i20
+e
+
+DEBUG:py4j.java_gateway:Answer received: !ys+-----------+-----+\n|movie_index|count|\n+-----------+-----+\n|        296|67310|\n|        356|66172|\n|        318|63366|\n|        593|63299|\n|        480|59715|\n|        260|54502|\n|        110|53769|\n|        589|52244|\n|       2571|51334|\n|        527|50054|\n|          1|49695|\n|        457|49581|\n|        150|47777|\n|        780|47048|\n|         50|47006|\n|       1210|46839|\n|        592|46054|\n|       1196|45313|\n|       2858|44987|\n|         32|44980|\n+-----------+-----+\nonly showing top 20 rows\n
+INFO:last-action-process:+------------------------------------------------------+
+INFO:last-action-process:+------------------SUCCESSFULLY------------------------+
+INFO:last-action-process:+------------------TAKE TIME: 96.822---------------------+
+INFO:last-action-process:+------------------------------------------------------+
+DEBUG:py4j.java_gateway:Command to send: c
+o11
+stop
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o30
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o35
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o56
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o57
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o59
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o60
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o61
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o62
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o63
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o65
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o66
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o37
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o52
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o54
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o55
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o14
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o21
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o22
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o13
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
+DEBUG:py4j.java_gateway:Command to send: m
+d
+o11
+e
+
+DEBUG:py4j.java_gateway:Answer received: !yv
