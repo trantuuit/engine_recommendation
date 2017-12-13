@@ -47,6 +47,18 @@ class whatIsPopularConfig(baseConfig):
         self.path_log_update = self.config['what-is-popular-default']['path-log-update']
         self.top_moive = self.config['what-is-popular-default']['top-movie']
 
+class specificProfileConfig(baseConfig):
+    def __init__(self):
+        super().__init__()
+        self.path_log_process = self.config['specific-profile']['path-log-process-data']
+        self.path_log_update = self.config['specific-profile']['path-log-update']
+
+class userProfileConfig(baseConfig):
+    def __init__(self):
+        super().__init__()
+        self.path_log_process = self.config['user-profile']['path-log-process-data']
+        self.path_log_update = self.config['user-profile']['path-log-update']
+
 if __name__ == '__main__':
     a = collaborativeConfig()
     print(a.path_log_process)

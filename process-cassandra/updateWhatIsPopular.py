@@ -16,13 +16,13 @@ SCRIPT_DIR = os.path.dirname(os.path.realpath(os.path.join(os.getcwd(), os.path.
 sys.path.append(os.path.normpath(os.path.join(SCRIPT_DIR, PACKAGE_PARENT)))
 # sys.path.insert(0, '/home/trantu/Desktop/engine_recommendation.git/trunk/configure/')
 # from configureManager import baseConfig
-from configure.configureManager import lastActionConfig
-config = lastActionConfig()
+from configure.configureManager import whatIsPopularConfig
+config = whatIsPopularConfig()
 
 logging.basicConfig(filename=str(config.path_log_update)+datetime.now().strftime('%Y_%m_%d_%H_%M_%S.log'),level=logging.DEBUG)
 # logging.basicConfig(filename=datetime.now().strftime('%Y_%m_%d.log'),level=logging.DEBUG)
 
-log = logging.getLogger('update-last-action')
+log = logging.getLogger('update-what-is-popular')
 log.setLevel(logging.DEBUG)
 # create console handler and set level to debug
 ch = logging.StreamHandler()
@@ -59,51 +59,49 @@ def getSession(keySpaceName):
     session.set_keyspace(keySpaceName)
     return session
 
-def insertResultLastAction(path_input):
+def insertResultWhatIsPopular(path_input):
     with open(path_input, 'r') as csvfile:
         reader = csv.reader(csvfile, delimiter=',')
         session = getSession(KEYSPACE_IMDB_MOVIE)
-        session.execute("TRUNCATE lamodel")
         log.info("+-----------Get session successfully-----------+")
+        session.execute("TRUNCATE wipmodel")
         log.info("+----------------------------------------------+")
-        log.info("+---Begin insert data into imdb_last_action---+")
+        log.info("+---Begin insert data into imdb_what_is_popular---+")
         log.info("+----------------------------------------------+")
         query = SimpleStatement("""
-            INSERT INTO lamodel (
-                idx_user, 
-                recommendations
+            INSERT INTO wipmodel (
+                movie_id, 
+                views
                 )
             VALUES (
-                %(idx_user)s, 
-                %(recommendations)s
+                %(movie_id)s, 
+                %(views)s
                 )
             """, consistency_level=ConsistencyLevel.ONE)
         for i in reader:
-            index_user = i[0]
-            recommendations = i[1:]
-            array = []
-            for j in recommendations:
-                array.append(j)
+            movie_id =i[0]
+            views = int(i[1])
             session.execute(
                 query, 
                 dict(
-                    idx_user=int(index_user), 
-                    recommendations=array
+                    movie_id=movie_id, 
+                    views=views
                 ))
         log.info("+--------------------------------------------------------+")
-        log.info("+-----Insert data into imdb_last_action successfully----+")
+        log.info("+--Insert data into imdb_what_is_popular successfully----+")
         log.info("+--------------------------------------------------------+")
+
     pass
 
 if __name__ == "__main__":
 
     spark = SparkSession \
     .builder \
-    .appName("update-last-action-result") \
+    .appName("update-what-is-popular-result") \
     .getOrCreate()
 
     if len(sys.argv) !=2:
-        log.info('spark-submit process-cassandra/updateLastAction.py output-data/last-action/last-action.csv')
+        log.info('spark-submit process-cassandra/updateWhatIsPopular.py output-data/what-is-popular/result.csv')
         exit(-1)
     path_input1 = sys.argv[1]
-    insertResultLastAction(path_input1)
+    insertResultWhatIsPopular(path_input1)

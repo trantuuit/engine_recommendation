@@ -1,0 +1,3 @@
+cd $HOME/Desktop/engine_recommendation.git/trunk/output-data/what-is-popular/
+rm -r result.csv
+spark-submit $HOME/Desktop/engine_recommendation.git/trunk/recommendation_engine/what_is_popular.py $HOME/Desktop/engine_recommendation.git/trunk/meta-data/movies.csv $HOME/Desktop/engine_recommendation.git/trunk/meta-data/ratings_20.txt $HOME/Desktop/engine_recommendation.git/trunk/output-data/what-is-popular/result.csv && spark-submit $HOME/Desktop/engine_recommendation.git/trunk/process-cassandra/updateWhatIsPopular.py $HOME/Desktop/engine_recommendation.git/trunk/output-data/what-is-popular/result.csv
