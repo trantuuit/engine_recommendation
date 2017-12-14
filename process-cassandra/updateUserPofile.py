@@ -216,9 +216,12 @@ if __name__ == '__main__':
 
     if len(sys.argv) != 2:
         print("Usage: updateUserProfile <input>")
+        """
+        spark-submit process-cassandra/updateUserPofile.py output-data/user-profile/
+        """
         exit(-1)
     path_input1 = sys.argv[1]
     # insertGenresUserProfile(path_input1)
     # insertActorsUserProfile(path_input1)
-    # insertWritersUserProfile(path_input1)
+    insertWritersUserProfile(path_input1)
     insertDirectorsUserProfile(path_input1)

@@ -39,7 +39,7 @@ def getGenre(movies_data, events_data):
     res = resj.map(lambda x: (x[1][0],x[1][1][2]))
 
     print('After map:' + str(res.take(2)))
-    flat_events = res.flatMap(lambda x: [(x[0], w) for w in x[1].split('|')])
+    flat_events = res.flatMap(lambda x: [(x[0], w) for w in x[1].split('|')]).filter(lambda x: x[1] !='')
     flatevents_zip = flat_events.map(lambda x: ((x[0],x[1]), 1))\
                                 .reduceByKey(lambda x, y: x + y)\
                                 
@@ -67,7 +67,7 @@ def getDirector(movies_data, events_data):
     res = events_data.join(movies_data).map(lambda x: (x[1][0], x[1][1][3]))
 
     print('After map:' + str(res.take(2)))
-    flat_events = res.flatMap(lambda x: [(x[0], w) for w in x[1].split('|')])
+    flat_events = res.flatMap(lambda x: [(x[0], w) for w in x[1].split('|')]).filter(lambda x: x[1] !='')
     flatevents_zip = flat_events.map(lambda x: ((x[0],x[1]), 1))\
                                 .reduceByKey(lambda x, y: x + y)\
                                 
@@ -91,10 +91,10 @@ def getDirector(movies_data, events_data):
 def getWriter(movies_data, events_data):
     # WRITER PERCENT
     filename = "WriterProfileResult"
-    movies_data = movies_data.filter(lambda x: x[1][4].strip() is not None)
+    movies_data = movies_data.filter(lambda x: x[1][4].strip() !='')
     res = events_data.join(movies_data).map(lambda x: (x[1][0], x[1][1][4]))
 
-    flat_events = res.flatMap(lambda x: [(x[0], w) for w in x[1].split('|')])
+    flat_events = res.flatMap(lambda x: [(x[0], w) for w in x[1].split('|')]).filter(lambda x: x[1] !='')
     flatevents_zip = flat_events.map(lambda x: ((x[0],x[1]), 1))\
                                 .reduceByKey(lambda x, y: x + y)
                                 
@@ -122,7 +122,7 @@ def getActor(movies_data, events_data):
     res = events_data.join(movies_data).map(lambda x: (x[1][0],x[1][1][5]))
 
     print('After map:' + str(res.take(2)))
-    flat_events = res.flatMap(lambda x: [(x[0], w) for w in x[1].split('|')])
+    flat_events = res.flatMap(lambda x: [(x[0], w) for w in x[1].split('|')]).filter(lambda x: x[1] !='')
     flatevents_zip = flat_events.map(lambda x: ((x[0],x[1]), 1))\
                                 .reduceByKey(lambda x, y: x + y)\
                                 
@@ -158,8 +158,10 @@ if __name__ == "__main__":
     if not os.path.exists(dir):
         os.mkdir(dir)
     t0 = time()
-    movies_raw_data = sc.textFile(path_input1)
-    movies_data = movies_raw_data.map(lambda line: split_csv(line)).map(lambda token: (token[0], (token[1], token[2], token[3], token[4], token[5], token[6])))
+    
+    # movies_raw_data = sc.textFile(path_input1)
+    movies_raw_data =sc.textFile(path_input1).map(lambda line: tuple(list(csv.reader([line]))[0]))
+    movies_data = movies_raw_data.map(lambda token: (token[0], (token[1], token[2], token[3], token[4], token[5], token[6])))
     tt = time() - t0
     # print("Completed collect! It take %s" % round(tt, 3))
     events_raw_data = sc.textFile(path_input2)
