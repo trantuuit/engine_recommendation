@@ -106,6 +106,7 @@ FEED_EXPORTERS = {
 # By specifying the fields to export, the CSV export honors the order
 # rather than using a random order.
 EXPORT_FIELDS = [
+    'Idx',
     'Id',
     'Title',
     'Year',

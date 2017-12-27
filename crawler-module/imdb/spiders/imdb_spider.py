@@ -7,7 +7,7 @@ from imdb.items import ImdbItem
 
 country_page = "http://www.imdb.com/country/"
 year_page = "http://www.imdb.com/year/"
-fileout = "SMALLIMG_MANUAL_WRITE.csv"
+fileout = "MANUAL_2011_01.csv"
 
 class YelpSpider(scrapy.Spider):
     name = "imdb"
@@ -57,8 +57,8 @@ class YelpSpider(scrapy.Spider):
         yearItems = main.css('table.splash tr td a')
         for item in yearItems:
             year = item.css('::text').extract()[0] if len(item.css('::text').extract()) else ''
-            if int(year) >= 1920 and int(year) <= date.today().year:
-            # if int(year) == 2016:
+            # if int(year) >= 1920 and int(year) <= date.today().year:
+            if int(year) == 2011:
                 link = item.css('::attr(href)').extract()[0] if len(item.css('::attr(href)').extract()) else ''
                 print(year + ' ---------------- ' + link)
                 yield response.follow(link, callback=self.parse1)

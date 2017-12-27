@@ -6,8 +6,8 @@ from datetime import datetime
 from cassandra import ConsistencyLevel
 from cassandra.cluster import Cluster
 from cassandra.query import SimpleStatement
-from pyspark.sql import SparkSession
-from pyspark.sql import Row
+# from pyspark.sql import SparkSession
+# from pyspark.sql import Row
 import json
 import csv
 
@@ -70,11 +70,13 @@ def insertResultWhatIsPopular(path_input):
         log.info("+----------------------------------------------+")
         query = SimpleStatement("""
             INSERT INTO wipmodel (
-                movie_id, 
+                movie_id,
+                bucket, 
                 views
                 )
             VALUES (
-                %(movie_id)s, 
+                %(movie_id)s,
+                %(bucket)s,
                 %(views)s
                 )
             """, consistency_level=ConsistencyLevel.ONE)
@@ -84,7 +86,8 @@ def insertResultWhatIsPopular(path_input):
             session.execute(
                 query, 
                 dict(
-                    movie_id=movie_id, 
+                    movie_id=movie_id,
+                    bucket=0, 
                     views=views
                 ))
         log.info("+--------------------------------------------------------+")
@@ -95,10 +98,10 @@ def insertResultWhatIsPopular(path_input):
 
 if __name__ == "__main__":
 
-    spark = SparkSession \
-    .builder \
-    .appName("update-what-is-popular-result") \
-    .getOrCreate()
+    # spark = SparkSession \
+    # .builder \
+    # .appName("update-what-is-popular-result") \
+    # .getOrCreate()
 
     if len(sys.argv) !=2:
         log.info('spark-submit process-cassandra/updateWhatIsPopular.py output-data/what-is-popular/result.csv')

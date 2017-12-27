@@ -11,7 +11,7 @@ suggest_link = 'https://v2.sg.media-imdb.com/suggests/'
 imdb_link = 'http://www.imdb.com/title/'
 country_page = "http://www.imdb.com/country/"
 year_page = "http://www.imdb.com/year/"
-fileout = "SMALLIMG_MANUAL_WRITE.csv"
+fileout = "MANUAL_test_2.csv"
 crawl_image = True
 
 class YelpSpider(scrapy.Spider):
@@ -25,11 +25,11 @@ class YelpSpider(scrapy.Spider):
     def __init__(self):
         self.items = set()
         self.ids = set()
-        header = ['Id','Title','Year','Genres','Directors','Writers','Actors','Countries','Release Date','Release Date 1','Release Date 2','Runtime','Rating','Rating Count','Popularity','MetaScore','PeopleMayLike','Keywords','Link','Description','poster','slate']
-        # with open(fileout, 'a', newline='') as csvfile:
-        #     spamwriter = csv.writer(csvfile, delimiter=',',
-        #                             quotechar='"', quoting=csv.QUOTE_ALL)
-        #     spamwriter.writerow(header)
+        header = ['Idx','Id','Title','Year','Genres','Directors','Writers','Actors','Countries','Release Date','Release Date 1','Release Date 2','Runtime','Rating','Rating Count','Popularity','MetaScore','PeopleMayLike','Keywords','Link','Description','poster','slate']
+        with open(fileout, 'a', newline='') as csvfile:
+            spamwriter = csv.writer(csvfile, delimiter=',',
+                                    quotechar='"', quoting=csv.QUOTE_ALL)
+            spamwriter.writerow(header)
 
     def start_requests(self):
         # yield scrapy.Request(country_page)
@@ -59,19 +59,23 @@ class YelpSpider(scrapy.Spider):
     #         
     def parse(self, response):
         main = response.css('div#main')
-        trendingItems = main.css('div div#col2outer div#col2mid table tr td span[style="font-size:200%;"] a')
+        trendingItems = main.css('div[style="border: 1px solid black; border-radius: 8px; padding: 6px; margin: 8px; box-shadow: 4px 4px 4px #888;"]')
         for item in trendingItems:
-            name = item.css('::text').extract()
+            idx = item.css('div#col1 span::text').extract()
+            idx = idx[0].strip() if idx else ''
+            nameitem = item.css('div#col2outer div#col2mid table tr td span[style="font-size:200%;"] a')
+            name = nameitem.css('::text').extract()
             name = name[0].strip() if name else ''
-            if len(name):
+            if len(name) and len(idx):
                 rename = re.sub('[^A-Za-z0-9\s]+', '', name)
                 rename  = rename.replace(' ', '_')
                 print(rename)
                 link = suggest_link + rename[0].lower() + '/' + rename + '.json'
-                yield response.follow(link, callback=self.parseJson, meta={'name':name})
+                yield response.follow(link, callback=self.parseJson, meta={'name':name, 'idx': idx})
                 # break
     def parseJson(self, response):
         # print(response.text)
+        idx = response.meta['idx']
         if('imdb$' in response.text):
             if '(' in response.text:
                 pos = response.text.index('(')
@@ -84,7 +88,7 @@ class YelpSpider(scrapy.Spider):
                         if id:
                             link = imdb_link + id
                             print('-----------following link: ' + link)
-                            yield response.follow(link, callback=self.parse2, meta={'Id':id, 'Link': link})
+                            yield response.follow(link, callback=self.parse2, meta={'Id':id, 'Link': link, 'idx': idx})
                     else: 
                         print('!!!!!!!!!!!!!!!!!!!!! Not found movie in IMDB, retrying...!!! link: %s' %text)
                         name=response.meta['name'].split(':')
@@ -93,7 +97,7 @@ class YelpSpider(scrapy.Spider):
                             rename  = rename.replace(' ', '_')
                             print(rename)
                             link = suggest_link + rename[0].lower() + '/' + rename + '.json'
-                            yield response.follow(link, callback=self.parseJson, meta={'name':''})
+                            yield response.follow(link, callback=self.parseJson, meta={'name':'', 'idx': idx})
         else:
             print('!!!!!!!!!!!!!!!!!!!!! Not found movie in IMDB!!! link: %s' %response.request.url)
 
@@ -236,6 +240,7 @@ class YelpSpider(scrapy.Spider):
             year = texts[len(texts) - 1]
 
         imdbItem = ImdbItem()
+        imdbItem['Idx']              = response.meta['idx']
         imdbItem['Id']              = response.meta['Id']
         imdbItem['Title']           = title
         imdbItem['Year']            = year
@@ -259,10 +264,10 @@ class YelpSpider(scrapy.Spider):
         imdbItem['image_urls']      = [poster] if (len(poster.strip()) > 0 and crawl_image) else []
         imdbItem['file_urls']       = [slate] if len(slate.strip()) > 0 else []
 
-        # with open(fileout, 'a', newline='') as csvfile:
-        #     spamwriter = csv.writer(csvfile, delimiter=',',
-        #                             quotechar='"', quoting=csv.QUOTE_ALL)
-        #     spamwriter.writerow([response.meta['Id'], title, year, genreslist, directors, writers, actors, countries, 
-        #         releasedate, releasedate1, releasedate2, runtime, rating, ratingcount, popularity, metascore, peoplemaylike, keywords, imdbItem['Link'], imdbItem['Description'], poster, slate])
+        with open(fileout, 'a', newline='') as csvfile:
+            spamwriter = csv.writer(csvfile, delimiter=',',
+                                    quotechar='"', quoting=csv.QUOTE_ALL)
+            spamwriter.writerow([response.meta['idx'], response.meta['Id'], title, year, genreslist, directors, writers, actors, countries, 
+                releasedate, releasedate1, releasedate2, runtime, rating, ratingcount, popularity, metascore, peoplemaylike, keywords, imdbItem['Link'], imdbItem['Description'], poster, slate])
         yield imdbItem
         

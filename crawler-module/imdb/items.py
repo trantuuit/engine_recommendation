@@ -9,6 +9,7 @@ import scrapy
 
 
 class ImdbItem(scrapy.Item):
+    Idx 			= scrapy.Field()
     Id 				= scrapy.Field()
     Title 			= scrapy.Field()
     Year 			= scrapy.Field()

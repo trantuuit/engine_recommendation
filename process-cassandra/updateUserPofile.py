@@ -6,8 +6,8 @@ from datetime import datetime
 from cassandra import ConsistencyLevel
 from cassandra.cluster import Cluster
 from cassandra.query import SimpleStatement
-from pyspark.sql import SparkSession
-from pyspark.sql import Row
+# from pyspark.sql import SparkSession
+# from pyspark.sql import Row
 import json
 import csv
 
@@ -209,10 +209,10 @@ def insertDirectorsUserProfile(path_input):
 
 if __name__ == '__main__':
 
-    spark = SparkSession \
-    .builder \
-    .appName("update-user-profile") \
-    .getOrCreate()
+    # spark = SparkSession \
+    # .builder \
+    # .appName("update-user-profile") \
+    # .getOrCreate()
 
     if len(sys.argv) != 2:
         print("Usage: updateUserProfile <input>")
@@ -221,7 +221,7 @@ if __name__ == '__main__':
         """
         exit(-1)
     path_input1 = sys.argv[1]
-    # insertGenresUserProfile(path_input1)
+    insertGenresUserProfile(path_input1)
     # insertActorsUserProfile(path_input1)
     insertWritersUserProfile(path_input1)
     insertDirectorsUserProfile(path_input1)

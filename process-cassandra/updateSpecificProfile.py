@@ -6,8 +6,8 @@ from datetime import datetime
 from cassandra import ConsistencyLevel
 from cassandra.cluster import Cluster
 from cassandra.query import SimpleStatement
-from pyspark.sql import SparkSession
-from pyspark.sql import Row
+# from pyspark.sql import SparkSession
+# from pyspark.sql import Row
 import json
 import csv
 
@@ -101,10 +101,10 @@ def insertResultSpecificProfile(path_input):
     pass
 
 if __name__ == '__main__':
-    spark = SparkSession \
-    .builder \
-    .appName("update-specific-profile") \
-    .getOrCreate()
+    # spark = SparkSession \
+    # .builder \
+    # .appName("update-specific-profile") \
+    # .getOrCreate()
     if len(sys.argv) != 2:
         print("Usage: updateSpecificProfile <input>")
 

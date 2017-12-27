@@ -85,19 +85,26 @@ def insertTrendingMovieFromFileText(path_input):
         session.execute("TRUNCATE trend_model")
         queryinsert = SimpleStatement("""
             INSERT INTO trend_model (
+                bucket,
+                rank,
                 movie_id 
                 )
             VALUES (
+                %(bucket)s,
+                %(rank)s,
                 %(movie_id)s
                 )
             """, consistency_level=ConsistencyLevel.ONE)
         i = 0
         for row in reader:
             if i != 0:
-                movie_id = str(row[0])
+                rank = int(row[0])
+                movie_id = str(row[1])
                 session.execute(
                     queryinsert, 
                     dict(
+                        bucket=0,
+                        rank=rank,
                         movie_id=str(movie_id)
                     ))
                 # query = "SELECT * FROM trend_model WHERE movie_id=%s"
@@ -148,21 +155,21 @@ def insertMovieFromFileText(path_input):
     .option("header", True)\
     .load(path_input).rdd
     moviesRDD = lines.map(lambda p: Row(
-        movieId=getValue(str(p[0])),
-        title=getValue(str(p[1])),
-        genres=getValue(str(p[3])),
-        directors=getValue(str(p[4])),
-        writers=getValue(str(p[5])),
-        actors=getValue(str(p[6])),
-        description=getValue(str(p[19])),
-        year=getValue(str(p[2])),
-        countries=getValue(str(p[7])),
-        release=getValue(str(p[9])),
-        runtime=getValue(str(p[11])),
-        rating=getValue(str(p[12])),
-        keywords=getValue(str(p[17])),
-        poster=str(p[20]),
-        slate=str(p[21])
+        movieId=getValue(str(p[1])),
+        title=getValue(str(p[2])),
+        genres=getValue(str(p[4])),
+        directors=getValue(str(p[5])),
+        writers=getValue(str(p[6])),
+        actors=getValue(str(p[7])),
+        description=getValue(str(p[20])),
+        year=getValue(str(p[3])),
+        countries=getValue(str(p[8])),
+        release=getValue(str(p[10])),
+        runtime=getValue(str(p[12])),
+        rating=getValue(str(p[13])),
+        keywords=getValue(str(p[18])),
+        poster=str(p[21]),
+        slate=str(p[22])
         ))
     session = getSession(KEYSPACE_IMDB_MOVIE)
     log.info("+-----------Get session successfully-----------+")
@@ -256,4 +263,4 @@ if __name__ == "__main__":
         exit(-1)
     path_input1 = sys.argv[1]
     insertTrendingMovieFromFileText(path_input1)
-    # insertMovieFromFileText(path_input1)
+    insertMovieFromFileText(path_input1)
