@@ -151,9 +151,7 @@ def insertMovieFromFileText(path_input):
     # image_urls, 20
     # file_urls, 21
     # image_paths 22
-    lines = spark.read.format('com.databricks.spark.csv')\
-    .option("header", True)\
-    .load(path_input).rdd
+    
     moviesRDD = lines.map(lambda p: Row(
         movieId=getValue(str(p[1])),
         title=getValue(str(p[2])),
@@ -263,4 +261,4 @@ if __name__ == "__main__":
         exit(-1)
     path_input1 = sys.argv[1]
     insertTrendingMovieFromFileText(path_input1)
-    insertMovieFromFileText(path_input1)
+    # insertMovieFromFileText(path_input1)

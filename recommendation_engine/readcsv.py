@@ -41,19 +41,12 @@ if __name__ == '__main__':
         exit(-1)
     conf = SparkConf() \
 	.setAppName("last-like") \
-	.set("spark.cassandra.connection.host", "10.88.113.74")
+	.set("spark.cassandra.connection.host", "127.0.0.1")
     sc = CassandraSparkContext(conf=conf)
     spark = SparkSession(sc)
     sql = SQLContext(sc)
 
-    customSchema = StructType([ \
-    StructField("rating", StringType(), True), \
-    StructField("timestamp", IntegerType(), True), \
-    StructField("idx_movie", IntegerType(), True), \
-    StructField("type_event", StringType(), True), \
-    StructField("idx_user", IntegerType(), True)])
-
     df = sql.read.format('com.databricks.spark.csv')\
-        .options(header='true')\
-        .load('/home/tutn6/Desktop/engine_recommendation.git/trunk/recommendation_engine/*.csv',schema = customSchema)
-    df.show()
+        .option("header", "true")\
+        .load('/home/trantu/Desktop/engine_recommendation.git/trunk/meta-data/user_event/*.csv')
+    print(df.count())
