@@ -40,7 +40,15 @@ if __name__ == "__main__":
                                          rating=float(p[2]),
                                          type_event='rating')
                             )
-    ratingsRDD.toDF().write\
+    training = spark.createDataFrame(ratingsRDD)
+    # training.take(4000000)
+    (training,test)= training.randomSplit([1.0, 0.0])
+    training.write\
         .format('com.databricks.spark.csv')\
         .option("header", "true")\
-        .save(path_output+datetime.now().strftime('%Y_%m_%d_%H_%M_%S.csv'))
+        .save(path_output+'20.csv')
+        # .save(path_output+datetime.now().strftime('%Y_%m_%d_%H_%M_%S.csv'))
+    # ratingsRDD.toDF().write\
+    #     .format('com.databricks.spark.csv')\
+    #     .option("header", "true")\
+    #     .save(path_output+datetime.now().strftime('%Y_%m_%d_%H_%M_%S.csv'))

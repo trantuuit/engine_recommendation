@@ -41,12 +41,12 @@ if __name__ == '__main__':
         exit(-1)
     conf = SparkConf() \
 	.setAppName("last-like") \
-	.set("spark.cassandra.connection.host", "127.0.0.1")
+	.set("spark.cassandra.connection.host", "10.88.113.74")
     sc = CassandraSparkContext(conf=conf)
     spark = SparkSession(sc)
     sql = SQLContext(sc)
 
     df = sql.read.format('com.databricks.spark.csv')\
         .option("header", "true")\
-        .load('/home/trantu/Desktop/engine_recommendation.git/trunk/meta-data/user_event/*.csv')
+        .load('/home/tutn6/Desktop/engine_recommendation.git/trunk/output-data/collaborative/8.csv')
     print(df.count())

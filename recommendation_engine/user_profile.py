@@ -5,7 +5,7 @@ import os
 import os.path
 import csv
 import sys
-
+from pyspark.sql import SparkSession
 def split_csv(line):
     if '\"' in line:
         result = []
@@ -144,6 +144,11 @@ def getActor(movies_data, events_data):
     pass
 if __name__ == "__main__":
     sc = SparkContext(appName="user profile")
+    spark = SparkSession(sc)
+    # spark = SparkSession\
+    # .builder\
+    # .appName("Collaborative_Filtering")\
+    # .getOrCreate()
     if len(sys.argv) != 4:
         print("Usage: user_profile <input_movies> <input_ratings_20> <output>")
         """
@@ -157,16 +162,30 @@ if __name__ == "__main__":
     dir = path_input3
     if not os.path.exists(dir):
         os.mkdir(dir)
-    t0 = time()
+    
     
     # movies_raw_data = sc.textFile(path_input1)
     movies_raw_data =sc.textFile(path_input1).map(lambda line: tuple(list(csv.reader([line]))[0]))
     movies_data = movies_raw_data.map(lambda token: (token[0], (token[1], token[2], token[3], token[4], token[5], token[6])))
-    tt = time() - t0
-    # print("Completed collect! It take %s" % round(tt, 3))
-    events_raw_data = sc.textFile(path_input2)
-    events_data = events_raw_data.map(lambda line: line.split(",")).map(lambda x: (x[1], x[0]))
-    # getGenre(movies_data,events_data)
+    # tt = time() - t0
+    
+    # events_raw_data = sc.textFile(path_input2)
+    lines = spark.read.format('com.databricks.spark.csv')\
+        .option("header", True)\
+        .load(path_input2)
+    # lines.show()
+        # ratingsRDD = lines.rdd.map(lambda p: Row( 
+        #                                 movie_index=int(p[1]),
+        #                                 ))
+    # events_data = events_raw_data.map(lambda line: line.split(",")).map(lambda x: (x[1], x[0]))
+    
+    events_data = lines.rdd.map(lambda x: (x[0], x[1]))
+    
+    
     # getDirector(movies_data,events_data)
-    getWriter(movies_data,events_data)
+    t0 = time()
+    getDirector(movies_data,events_data)
+    # getGenre(movies_data,events_data)
+    # getWriter(movies_data,events_data)
+    print("Completed collect! It take %s" % round(time()-t0, 2))
     # getActor(movies_data,events_data)

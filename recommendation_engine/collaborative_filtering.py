@@ -10,7 +10,8 @@ from pyspark.sql import SparkSession
 
 # from pyspark.ml.evaluation import RegressionEvaluator
 from pyspark.ml.recommendation import ALS
-from pyspark.sql import Row
+from pyspark.sql import Row, SQLContext
+
 from time import time
 import math
 import json
@@ -52,34 +53,36 @@ def train(path_input, path_output):
     log.info("+------------------------------------------------------+")
     log.info("+----------------------BEGIN GET DATA INTO RDD--------+")
     log.info("+------------------------------------------------------+")
-    t0 = time()
-    # lines = spark.read.format('com.databricks.spark.csv')\
-    # .option("header", True)\
-    # .load(path_input).rdd
+    
+    lines = spark.read.format('com.databricks.spark.csv')\
+    .option("header", True)\
+    .load(path_input)
+    # lines.show()
     # lines = spark.read.text(path_input).rdd
     # parts = lines.map(lambda row: row.value.split(","))
-    lines = spark.read.text(path_input).rdd
+    # lines = spark.read.text(path_input).rdd
 
-    parts = lines.map(lambda row: row.value.split(","))
-    ratingsRDD = parts.map(lambda p: Row(index_user=int(p[0]), index_movie=int(p[1]),
-                                         rating=float(p[2]), timestamp=long(p[3])))
+    # parts = lines.rdd.map(lambda row: row.value.split(","))
+    ratingsRDD = lines.rdd.map(lambda p: Row(idx_user=int(p[0]), 
+                                        idx_movie=int(p[1]),
+                                        rating=float(p[2])))
+    # print(ratingsRDD.take(1))
     training = spark.createDataFrame(ratingsRDD)
     log.info("+------------------------------------------------------+")
     log.info("+------------------ENG GET DATA INTO RDD--------------+")
     log.info("+------------------------------------------------------+")
     _train(training, path_output)
-    print("take times: %s" %round(time()-t0,3))
+    # print("take times: %s" %round(time()-t0,3))
 
-    log.info("+------------------------------------------------------+")
-    log.info("+--------------total time: %s----------------------+" %round(time()-t0,3))
-    log.info("+------------------------------------------------------+")
+
     pass
 
 def _train(source_training, path_output):
+    print(source_training.take(1))
     log.info("+------------------------------------------------------+")
     log.info("+-----------------BEGIN TRAIN MODEL--------------------+")
     log.info("+------------------------------------------------------+")
-    als = ALS(maxIter=int(config.maxIter), regParam=float(config.regParam), userCol="index_user", itemCol="index_movie", ratingCol="rating",
+    als = ALS(maxIter=int(config.maxIter), regParam=float(config.regParam), userCol="idx_user", itemCol="idx_movie", ratingCol="rating",
               coldStartStrategy="drop")
     model = als.fit(source_training)
     userRecs = model.recommendForAllUsers(int(config.top_movie))
@@ -96,10 +99,10 @@ def _train(source_training, path_output):
     log.info("+----------------BEGIN EXPORT DATA INTO FILE CSV-------+")
     log.info("+------------------------------------------------------+")
     for i in userRecs.collect():
-        result = [i['index_user']]
+        result = [i['idx_user']]
         recommendations=i['recommendations']
         for j in recommendations:
-            index_movie = str(j['index_movie'])
+            index_movie = str(j['idx_movie'])
             rating = str(j['rating'])
             result.append(index_movie+'|'+rating)
         To_CSV(result,path_output)
@@ -129,7 +132,8 @@ if __name__ == "__main__":
         .builder\
         .appName("Collaborative_Filtering")\
         .getOrCreate()
-
+    sqlContext = SQLContext(spark)
+    t0 = time()
     log.info("+--------------------------------------------------------------+")
     log.info("+--------------------------Read path---------------------------+")
     log.info("+--------------------------------------------------------------+")
@@ -139,5 +143,8 @@ if __name__ == "__main__":
     train(path_input, path_output)
     log.info("+------------------------------------------------------+")
     log.info("+----------------------SUCCESFFULY---------------------+")
+    log.info("+------------------------------------------------------+")
+    log.info("+------------------------------------------------------+")
+    log.info("+--------------total time: %s----------------------+" %round(time()-t0,2))
     log.info("+------------------------------------------------------+")
     spark.stop()

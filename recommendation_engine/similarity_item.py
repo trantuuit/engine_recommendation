@@ -9,7 +9,7 @@ import os.path
 import csv
 import numpy as np
 import sys
-from pyspark.sql import SparkSession
+# from pyspark.sql import SparkSession
 from datetime import datetime
 import logging
 
@@ -98,10 +98,10 @@ def _train(path_input, path_output, numrow, numtop):
 
 
 if __name__ == "__main__":
-    spark = SparkSession\
-    .builder\
-    .appName("Similarity-item")\
-    .getOrCreate()
+    # spark = SparkSession\
+    # .builder\
+    # .appName("Similarity-item")\
+    # .getOrCreate()
 
     if len(sys.argv) != 3:
         log.error("+------------------------------------------------------+")
