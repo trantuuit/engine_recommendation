@@ -78,11 +78,11 @@ def train(path_input, path_output):
     pass
 
 def _train(source_training, path_output):
-    print(source_training.take(1))
+    # print(source_training.take(1))
     log.info("+------------------------------------------------------+")
     log.info("+-----------------BEGIN TRAIN MODEL--------------------+")
     log.info("+------------------------------------------------------+")
-    als = ALS(maxIter=int(config.maxIter), regParam=float(config.regParam), userCol="idx_user", itemCol="idx_movie", ratingCol="rating",
+    als = ALS(rank=12, maxIter=10,userCol="idx_user", itemCol="idx_movie", ratingCol="rating",
               coldStartStrategy="drop")
     model = als.fit(source_training)
     userRecs = model.recommendForAllUsers(int(config.top_movie))
