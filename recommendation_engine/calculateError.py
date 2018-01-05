@@ -35,34 +35,355 @@ if __name__ == "__main__":
                                         rating=float(p[2])))
 
     ratings = spark.createDataFrame(ratingsRDD)
-    (training, test) = ratings.randomSplit([0.8, 0.2])
+    (training, validate, test) = ratings.randomSplit([0.8, 0.15, 0.05])
+    print('training: %s' %(training.count()))
+    (training_2, training_4, training_6, remain) = training.randomSplit([0.125, 0.25, 0.375, 0.25])
+    (training_8, remain ) = training.randomSplit([0.5, 0.5])
+    (training_10, remain ) = training.randomSplit([0.625, 0.375])
+    (training_12, remain ) = training.randomSplit([0.75, 0.25])
+    (training_14, remain ) = training.randomSplit([0.875, 0.125])
+    training_16 = training
+    print('total 2: %s' %(training_2.count()))
+    print('total 4: %s' %(training_4.count()))
+    print('total 6: %s' %(training_6.count()))
+    print('total 8: %s' %(training_8.count()))
+    print('total 10: %s' %(training_10.count()))
+    print('total 12: %s' %(training_12.count()))
+    print('total 14: %s' %(training_14.count()))
+    print('total 16: %s' %(training_16.count()))
 
-    # Build the recommendation model using ALS on the training data
-    # Note we set cold start strategy to 'drop' to ensure we don't get NaN evaluation metrics
-    als = ALS(rank=12, maxIter=15, userCol= "idx_user", itemCol= "idx_movie", ratingCol="rating",
+    als = ALS(userCol= "idx_user", itemCol= "idx_movie", ratingCol="rating",
               coldStartStrategy="drop")
+    #------------------------------------------------
+    #-------------------model 4 million -------------
+    #------------------------------------------------
+
+    print('+--------------------------------------------------+')
+    print('+------4 million training dataset-----------------+')
+    print('+--------------------------------------------------+')
+
+
+    model = als.fit(training_4)
+
+    predictions = model.transform(training_4)
+    #-----------RMSE---------------------------
+    evaluator = RegressionEvaluator(metricName="rmse", labelCol="rating",
+                                    predictionCol="prediction")
+                                    
+    rmse = evaluator.evaluate(predictions)
+    print("Root-mean-square error-training = " + str(rmse))
+
+    predictions = model.transform(validate)
+    evaluator = RegressionEvaluator(metricName="rmse", labelCol="rating",
+                                    predictionCol="prediction")
+    rmse = evaluator.evaluate(predictions)
+    print("Root-mean-square error-validate = " + str(rmse))
+
+    predictions = model.transform(test)
+    evaluator = RegressionEvaluator(metricName="rmse", labelCol="rating",
+                                    predictionCol="prediction")
+    rmse = evaluator.evaluate(predictions)
+    print("Root-mean-square error-test = " + str(rmse))
+
+    #-------------MAE--------------------
+    evaluator = RegressionEvaluator(metricName="mae", labelCol="rating",
+                                    predictionCol="prediction")
+    mae = evaluator.evaluate(predictions)
+    print("Mean-absolute error-training = " + str(mae))
+
+    predictions = model.transform(validate)
+    evaluator = RegressionEvaluator(metricName="mae", labelCol="rating",
+                                    predictionCol="prediction")
+    mae = evaluator.evaluate(predictions)
+    print("Mean-absolute error-validate = " + str(mae))
+
+    
+    predictions = model.transform(test)
+    evaluator = RegressionEvaluator(metricName="mae", labelCol="rating",
+                                    predictionCol="prediction")
+    mae = evaluator.evaluate(predictions)
+    print("Mean-absolute error-test = " + str(mae))
+
+    #------------------------------------------------
+    #------------------model 6 million --------------
+    #------------------------------------------------
+    print('+--------------------------------------------------+')
+    print('+------6 million training dataset-----------------+')
+    print('+--------------------------------------------------+')
+
+    model = als.fit(training_6)
+
+    predictions = model.transform(training_6)
+    evaluator = RegressionEvaluator(metricName="rmse", labelCol="rating",
+                                    predictionCol="prediction")
+    rmse = evaluator.evaluate(predictions)
+    print("Root-mean-square error-training = " + str(rmse))
+
+    predictions = model.transform(validate)
+    evaluator = RegressionEvaluator(metricName="rmse", labelCol="rating",
+                                    predictionCol="prediction")
+    rmse = evaluator.evaluate(predictions)
+    print("Root-mean-square error-validate = " + str(rmse))
+
+    
+    predictions = model.transform(test)
+    evaluator = RegressionEvaluator(metricName="rmse", labelCol="rating",
+                                    predictionCol="prediction")
+    rmse = evaluator.evaluate(predictions)
+    print("Root-mean-square error-test = " + str(rmse))
+
+    #-----------------MAE--------------------
+    predictions = model.transform(training_6)
+    evaluator = RegressionEvaluator(metricName="mae", labelCol="rating",
+                                    predictionCol="prediction")
+    mae = evaluator.evaluate(predictions)
+    print("Mean-absolute error-training = " + str(mae))
+
+    predictions = model.transform(validate)
+    evaluator = RegressionEvaluator(metricName="mae", labelCol="rating",
+                                    predictionCol="prediction")
+    mae = evaluator.evaluate(predictions)
+    print("Mean-absolute error-validate = " + str(mae))
+
+    
+    predictions = model.transform(test)
+    evaluator = RegressionEvaluator(metricName="mae", labelCol="rating",
+                                    predictionCol="prediction")
+    mae = evaluator.evaluate(predictions)
+    print("Mean-absolute error-test = " + str(mae))
+
+    #----------------model 8 million----------------------
+    print('+--------------------------------------------------+')
+    print('+------8 million training dataset-----------------+')
+    print('+--------------------------------------------------+')
+
+    model = als.fit(training_8)
+
+    predictions = model.transform(training_8)
+    evaluator = RegressionEvaluator(metricName="rmse", labelCol="rating",
+                                    predictionCol="prediction")
+    rmse = evaluator.evaluate(predictions)
+    print("Root-mean-square error-training = " + str(rmse))
+
+    predictions = model.transform(validate)
+    evaluator = RegressionEvaluator(metricName="rmse", labelCol="rating",
+                                    predictionCol="prediction")
+    rmse = evaluator.evaluate(predictions)
+    print("Root-mean-square error-validate = " + str(rmse))
+
+    #-----------------MAE--------------------
+    predictions = model.transform(training_8)
+    evaluator = RegressionEvaluator(metricName="mae", labelCol="rating",
+                                    predictionCol="prediction")
+    mae = evaluator.evaluate(predictions)
+    print("Mean-absolute error-training = " + str(mae))
+
+    predictions = model.transform(validate)
+    evaluator = RegressionEvaluator(metricName="mae", labelCol="rating",
+                                    predictionCol="prediction")
+    mae = evaluator.evaluate(predictions)
+    print("Mean-absolute error-validate = " + str(mae))
+
+    predictions = model.transform(test)
+    evaluator = RegressionEvaluator(metricName="mae", labelCol="rating",
+                                    predictionCol="prediction")
+    mae = evaluator.evaluate(predictions)
+    print("Mean-absolute error-test = " + str(mae))
+
+    #------------------------------------------------------
+    #----------------model 10 million----------------------
+    #------------------------------------------------------
+    print('+--------------------------------------------------+')
+    print('+------10 million training dataset-----------------+')
+    print('+--------------------------------------------------+')
+
+    model = als.fit(training_10)
+
+    predictions = model.transform(training_10)
+    evaluator = RegressionEvaluator(metricName="rmse", labelCol="rating",
+                                    predictionCol="prediction")
+    rmse = evaluator.evaluate(predictions)
+    print("Root-mean-square error-training = " + str(rmse))
+
+    predictions = model.transform(validate)
+    evaluator = RegressionEvaluator(metricName="rmse", labelCol="rating",
+                                    predictionCol="prediction")
+    rmse = evaluator.evaluate(predictions)
+    print("Root-mean-square error-validate = " + str(rmse))
+    
+    predictions = model.transform(test)
+    evaluator = RegressionEvaluator(metricName="rmse", labelCol="rating",
+                                    predictionCol="prediction")
+    rmse = evaluator.evaluate(predictions)
+    print("Root-mean-square error-test = " + str(rmse))
+
+
+    #----------------------------------------
+    #-----------------MAE--------------------
+    #----------------------------------------
+    
+    predictions = model.transform(training_10)
+    evaluator = RegressionEvaluator(metricName="mae", labelCol="rating",
+                                    predictionCol="prediction")
+    mae = evaluator.evaluate(predictions)
+    print("Mean-absolute error-training = " + str(mae))
+
+    predictions = model.transform(validate)
+    evaluator = RegressionEvaluator(metricName="mae", labelCol="rating",
+                                    predictionCol="prediction")
+    mae = evaluator.evaluate(predictions)
+    print("Mean-absolute error-validate = " + str(mae))
+
+    predictions = model.transform(test)
+    evaluator = RegressionEvaluator(metricName="mae", labelCol="rating",
+                                    predictionCol="prediction")
+    mae = evaluator.evaluate(predictions)
+    print("Mean-absolute error-test = " + str(mae))
+
+    #------------------------------------------------------
+    #----------------model 12 million----------------------
+    #------------------------------------------------------
+    print('+--------------------------------------------------+')
+    print('+------12 million training dataset-----------------+')
+    print('+--------------------------------------------------+')
+
+    model = als.fit(training_12)
+
+    predictions = model.transform(training_12)
+    evaluator = RegressionEvaluator(metricName="rmse", labelCol="rating",
+                                    predictionCol="prediction")
+    rmse = evaluator.evaluate(predictions)
+    print("Root-mean-square error-training = " + str(rmse))
+
+    predictions = model.transform(validate)
+    evaluator = RegressionEvaluator(metricName="rmse", labelCol="rating",
+                                    predictionCol="prediction")
+    rmse = evaluator.evaluate(predictions)
+    print("Root-mean-square error-validate = " + str(rmse))
+    
+    predictions = model.transform(test)
+    evaluator = RegressionEvaluator(metricName="rmse", labelCol="rating",
+                                    predictionCol="prediction")
+    rmse = evaluator.evaluate(predictions)
+    print("Root-mean-square error-test = " + str(rmse))
+
+
+    #----------------------------------------
+    #-----------------MAE--------------------
+    #----------------------------------------
+
+    predictions = model.transform(training_12)
+    evaluator = RegressionEvaluator(metricName="mae", labelCol="rating",
+                                    predictionCol="prediction")
+    mae = evaluator.evaluate(predictions)
+    print("Mean-absolute error-training = " + str(mae))
+
+    predictions = model.transform(validate)
+    evaluator = RegressionEvaluator(metricName="mae", labelCol="rating",
+                                    predictionCol="prediction")
+    mae = evaluator.evaluate(predictions)
+    print("Mean-absolute error-validate = " + str(mae))
+
+    predictions = model.transform(test)
+    evaluator = RegressionEvaluator(metricName="mae", labelCol="rating",
+                                    predictionCol="prediction")
+    mae = evaluator.evaluate(predictions)
+    print("Mean-absolute error-test = " + str(mae))
+
+    #----------------model 14 million----------------------
+    print('+--------------------------------------------------+')
+    print('+------14 million training dataset-----------------+')
+    print('+--------------------------------------------------+')
+
+    model = als.fit(training_14)
+
+    predictions = model.transform(training_14)
+    evaluator = RegressionEvaluator(metricName="rmse", labelCol="rating",
+                                    predictionCol="prediction")
+    rmse = evaluator.evaluate(predictions)
+    print("Root-mean-square error-training = " + str(rmse))
+
+    predictions = model.transform(validate)
+    evaluator = RegressionEvaluator(metricName="rmse", labelCol="rating",
+                                    predictionCol="prediction")
+    rmse = evaluator.evaluate(predictions)
+    print("Root-mean-square error-validate = " + str(rmse))
+
+    
+    predictions = model.transform(test)
+    evaluator = RegressionEvaluator(metricName="rmse", labelCol="rating",
+                                    predictionCol="prediction")
+    rmse = evaluator.evaluate(predictions)
+    print("Root-mean-square error-test = " + str(rmse))
+
+
+    #----------------------------------------
+    #-----------------MAE--------------------
+    #----------------------------------------
+
+    predictions = model.transform(training_14)
+    evaluator = RegressionEvaluator(metricName="mae", labelCol="rating",
+                                    predictionCol="prediction")
+    mae = evaluator.evaluate(predictions)
+    print("Mean-absolute error-training = " + str(mae))
+
+    predictions = model.transform(validate)
+    evaluator = RegressionEvaluator(metricName="mae", labelCol="rating",
+                                    predictionCol="prediction")
+    mae = evaluator.evaluate(predictions)
+    print("Mean-absolute error-validate = " + str(mae))
+
+    predictions = model.transform(test)
+    evaluator = RegressionEvaluator(metricName="mae", labelCol="rating",
+                                    predictionCol="prediction")
+    mae = evaluator.evaluate(predictions)
+    print("Mean-absolute error-test = " + str(mae))
+    
+
+    #----------------model 16 million----------------------
+    print('+--------------------------------------------------+')
+    print('+------16 million training dataset-----------------+')
+    print('+--------------------------------------------------+')
+
     model = als.fit(training)
-
-    # Evaluate the model by computing the RMSE on the test data
-    predictions_train = model.transform(training)
-    evaluator_train = RegressionEvaluator(metricName="rmse", labelCol="rating",
+    
+    predictions = model.transform(training)
+    evaluator = RegressionEvaluator(metricName="rmse", labelCol="rating",
                                     predictionCol="prediction")
-    rmse_train = evaluator_train.evaluate(predictions_train)
-    print("Root-mean-square error-train = " + str(rmse_train))
+    rmse = evaluator.evaluate(predictions)
+    print("Root-mean-square error-training = " + str(rmse))
 
-
-    predictions_test = model.transform(test)
-    evaluator_test = RegressionEvaluator(metricName="rmse", labelCol="rating",
+    predictions = model.transform(validate)
+    evaluator = RegressionEvaluator(metricName="rmse", labelCol="rating",
                                     predictionCol="prediction")
-    rmse_test = evaluator_test.evaluate(predictions_test)
-    print("Root-mean-square error-test = " + str(rmse_test))
+    rmse = evaluator.evaluate(predictions)
+    print("Root-mean-square error-validate = " + str(rmse))
 
-    # Generate top 10 movie recommendations for each user
-    # userRecs = model.recommendForAllUsers(10)
-    # Generate top 10 user recommendations for each movie
-    # movieRecs = model.recommendForAllItems(10)
-    # $example off$
-    # userRecs.show()
-    # movieRecs.show()
+    predictions = model.transform(test)
+    evaluator = RegressionEvaluator(metricName="rmse", labelCol="rating",
+                                    predictionCol="prediction")
+    rmse = evaluator.evaluate(predictions)
+    print("Root-mean-square error-test = " + str(rmse))
+
+    #----------------------------------------
+    #-----------------MAE--------------------
+    #----------------------------------------
+    predictions = model.transform(training)
+    evaluator = RegressionEvaluator(metricName="mae", labelCol="rating",
+                                    predictionCol="prediction")
+    mae = evaluator.evaluate(predictions)
+    print("Mean-absolute error-training = " + str(mae))
+
+    predictions = model.transform(validate)
+    evaluator = RegressionEvaluator(metricName="mae", labelCol="rating",
+                                    predictionCol="prediction")
+    mae = evaluator.evaluate(predictions)
+    print("Mean-absolute error-validate = " + str(mae))
+
+    predictions = model.transform(test)
+    evaluator = RegressionEvaluator(metricName="mae", labelCol="rating",
+                                    predictionCol="prediction")
+    mae = evaluator.evaluate(predictions)
+    print("Mean-absolute error-test = " + str(mae))
 
     spark.stop()
