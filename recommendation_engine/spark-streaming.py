@@ -56,13 +56,12 @@ if __name__ == '__main__':
             "idx_user": x['idx_user'],
             "time": x['time'],
             "idx_movie": x['idx_movie'],
-            "rating": x['rating'],
+            "value": x['value'],
             "type_event": x['type_event']
             
         })
     ob.pprint()
     ob.saveToCassandra("db","user_event_model")
-    # ob.saveToCassandra("web_analytic","fsa_log_past_twodate")
     ssc.start()
     ssc.awaitTermination()
     pass
