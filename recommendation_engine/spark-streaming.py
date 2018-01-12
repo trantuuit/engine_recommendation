@@ -56,6 +56,7 @@ if __name__ == '__main__':
             "idx_user": x['idx_user'],
             "time": x['time'],
             "idx_movie": x['idx_movie'],
+            "movie_id": x['movie_id'],
             "value": x['value'],
             "type_event": x['type_event']
             
