@@ -57,22 +57,26 @@ def train(path_input, path_output):
     lines = spark.read.format('com.databricks.spark.csv')\
     .option("header", True)\
     .load(path_input)
+
+    # print(lines.count())
     # lines.show()
     # lines = spark.read.text(path_input).rdd
     # parts = lines.map(lambda row: row.value.split(","))
+
     # lines = spark.read.text(path_input).rdd
 
-    # parts = lines.rdd.map(lambda row: row.value.split(","))
-    ratingsRDD = lines.rdd.map(lambda p: Row(idx_user=int(p[0]), 
-                                        idx_movie=int(p[1]),
-                                        rating=float(p[2])))
+    # parts = lines.map(lambda row: row.value.split(","))
+
+    # ratingsRDD = parts.map(lambda p: Row(idx_user=int(p[0]),idx_movie=int(p[1]),rating=float(p[2])))
     # print(ratingsRDD.take(1))
+    ratingsRDD = lines.rdd.map(lambda p: Row(idx_user=int(p[1]),idx_movie=int(p[0]),rating=float(p[2])))
+    print(ratingsRDD.count())
     training = spark.createDataFrame(ratingsRDD)
     log.info("+------------------------------------------------------+")
     log.info("+------------------ENG GET DATA INTO RDD--------------+")
     log.info("+------------------------------------------------------+")
     _train(training, path_output)
-    # print("take times: %s" %round(time()-t0,3))
+    
 
 
     pass
@@ -82,13 +86,13 @@ def _train(source_training, path_output):
     log.info("+------------------------------------------------------+")
     log.info("+-----------------BEGIN TRAIN MODEL--------------------+")
     log.info("+------------------------------------------------------+")
-    als = ALS(rank=12, maxIter=10,userCol="idx_user", itemCol="idx_movie", ratingCol="rating",
-              coldStartStrategy="drop")
+    als = ALS(userCol="idx_user", itemCol="idx_movie", ratingCol="rating", coldStartStrategy="drop")
     model = als.fit(source_training)
-    userRecs = model.recommendForAllUsers(int(config.top_movie))
+    userRecs = model.recommendForAllUsers(30)
     log.info("+------------------------------------------------------+")
     log.info("+------------------END TRAIN MODEL---------------------+")
     log.info("+------------------------------------------------------+")
+    print(userRecs.count())
     # userRecs.show()
     # print("type:%s" %type(userRecs))
     # print(type(userRecs.toJSON()))
@@ -121,8 +125,10 @@ def _train(source_training, path_output):
 
     pass
 
-def predict():
-    pass
+"""
+spark-submit recommendation_engine/collaborative_filtering.py meta-data/20.csv/ 
+output-data/collaborative-filtering/result.csv
+"""
 if __name__ == "__main__":
     if len(sys.argv) != 3:
         print("Usage: collaborative_filtering <path_input> <path_output>", file=sys.stderr)

@@ -43,7 +43,7 @@ if __name__ == '__main__':
 
     conf = SparkConf() \
 	.setAppName("spark-streaming") \
-	.set("spark.cassandra.connection.host", "10.88.113.74")
+	.set("spark.cassandra.connection.host", "127.0.0.1")
     sc = CassandraSparkContext(conf=conf)
     ssc = StreamingContext(sc, 1)
     brokers, topic = sys.argv[1:]

@@ -46,7 +46,7 @@ if __name__ == "__main__":
     training.write\
         .format('com.databricks.spark.csv')\
         .option("header", "true")\
-        .save(path_output+'20.csv')
+        .save(path_output+'20_user_event.csv')
         # .save(path_output+datetime.now().strftime('%Y_%m_%d_%H_%M_%S.csv'))
     # ratingsRDD.toDF().write\
     #     .format('com.databricks.spark.csv')\

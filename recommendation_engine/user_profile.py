@@ -47,7 +47,7 @@ def getGenre(movies_data, events_data):
 
     events_all_per_user = flatevents_zip.map(lambda x: (x[0][0], x[1]))\
                                 .reduceByKey(lambda x, y: x + y)            #Userid, allnumber
-    event_join1 = events_all_per_user.join(events_count).map(lambda x: (x[0],(x[1][1][0],round(100*int(x[1][1][1])/int(x[1][0])))))
+    event_join1 = events_all_per_user.join(events_count).map(lambda x: (x[0],(x[1][1][0],round(100*int(x[1][1][1])/int(x[1][0]),3))))
                                                       
     event_join = event_join1.groupByKey().map(lambda x : (x[0], sorted(list(x[1]), key=lambda x: x[1],reverse=True)[:10] ))\
         .map(lambda x: map_percent(x)) #('1302', (224, ('Short', 10)))
@@ -75,7 +75,7 @@ def getDirector(movies_data, events_data):
 
     events_all_per_user = flatevents_zip.map(lambda x: (x[0][0], x[1]))\
                                 .reduceByKey(lambda x, y: x + y)            #Userid, allnumber
-    event_join1 = events_all_per_user.join(events_count).map(lambda x: (x[0],(x[1][1][0],round(100*int(x[1][1][1])/int(x[1][0])))))
+    event_join1 = events_all_per_user.join(events_count).map(lambda x: (x[0],(x[1][1][0],round(100*int(x[1][1][1])/int(x[1][0]),3))))
                                                       
     event_join = event_join1.groupByKey().map(lambda x : (x[0], sorted(list(x[1]), key=lambda x: x[1],reverse=True)[:10] ))\
         .map(lambda x: map_percent(x)) #('1302', (224, ('Short', 10)))
@@ -102,7 +102,7 @@ def getWriter(movies_data, events_data):
 
     events_all_per_user = flatevents_zip.map(lambda x: (x[0][0], x[1]))\
                                 .reduceByKey(lambda x, y: x + y)            #Userid, allnumber
-    event_join1 = events_all_per_user.join(events_count).map(lambda x: (x[0],(x[1][1][0],round(100*int(x[1][1][1])/int(x[1][0])))))
+    event_join1 = events_all_per_user.join(events_count).map(lambda x: (x[0],(x[1][1][0],round(100*int(x[1][1][1])/int(x[1][0]),3))))
                                                       
     event_join = event_join1.groupByKey().map(lambda x : (x[0], sorted(list(x[1]), key=lambda x: x[1],reverse=True)[:10] ))\
         .map(lambda x: map_percent(x)) #('1302', (224, ('Short', 10)))
@@ -130,7 +130,7 @@ def getActor(movies_data, events_data):
 
     events_all_per_user = flatevents_zip.map(lambda x: (x[0][0], x[1]))\
                                 .reduceByKey(lambda x, y: x + y)            #Userid, allnumber
-    event_join1 = events_all_per_user.join(events_count).map(lambda x: (x[0],(x[1][1][0],round(100*int(x[1][1][1])/int(x[1][0])))))
+    event_join1 = events_all_per_user.join(events_count).map(lambda x: (x[0],(x[1][1][0],round(100*int(x[1][1][1])/int(x[1][0]),3))))
                                                       
     event_join = event_join1.groupByKey().map(lambda x : (x[0], sorted(list(x[1]), key=lambda x: x[1],reverse=True)[:10] ))\
         .map(lambda x: map_percent(x)) #('1302', (224, ('Short', 10)))
@@ -184,8 +184,9 @@ if __name__ == "__main__":
     
     # getDirector(movies_data,events_data)
     t0 = time()
-    getDirector(movies_data,events_data)
+    # getDirector(movies_data,events_data)
     # getGenre(movies_data,events_data)
     # getWriter(movies_data,events_data)
+    getActor(movies_data,events_data)
     print("Completed collect! It take %s" % round(time()-t0, 2))
-    # getActor(movies_data,events_data)
+    
