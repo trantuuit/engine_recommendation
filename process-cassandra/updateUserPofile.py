@@ -222,6 +222,6 @@ if __name__ == '__main__':
         exit(-1)
     path_input1 = sys.argv[1]
     insertGenresUserProfile(path_input1)
-    # insertActorsUserProfile(path_input1)
+    insertActorsUserProfile(path_input1)
     insertWritersUserProfile(path_input1)
     insertDirectorsUserProfile(path_input1)

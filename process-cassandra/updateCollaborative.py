@@ -100,15 +100,17 @@ def insertResultCollaborativeFiltering(path_input):
         log.info("+----Insert data into collaborative-result successfully--+")
         log.info("+--------------------------------------------------------+")
     pass
-
+"""
+spark-submit engine_recommendation/updateCollaborative.py output-data/collaborative-filtering/result.csv
+"""
 if __name__ == "__main__":
     spark = SparkSession\
     .builder\
     .appName("update-collaborative-result")\
     .getOrCreate()
     if len(sys.argv) !=2:
-        log.info('spark-submit engine_recommendation/updateTrending.py\
-                               trending.csv')
+        log.info('spark-submit engine_recommendation/collaborative_filtering.py\
+                            output-data/collaborative-filtering/result.csv')
         exit(-1)
     path_input1 = sys.argv[1]
     insertResultCollaborativeFiltering(path_input1)
