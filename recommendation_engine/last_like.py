@@ -57,7 +57,7 @@ if __name__ == '__main__':
         # break
 
         
-        # rdd1 = raw_rdd1.filter("type_event == 'rating' and value = 5").select('idx_user','idx_movie','time')
+        rdd1 = raw_rdd1.filter("type_event == 'rating' and value = 5").select('idx_user','idx_movie','time')
         rdd2 = raw_rdd1.filter("type_event == 'watched' ").select('idx_user','movie_id','time')
         # tmp_df1 = rdd1.dropDuplicates(['idx_user'])
         # tmp_df1.write.\
@@ -70,9 +70,9 @@ if __name__ == '__main__':
         .filter(col('rank') <= 10)\
         .groupBy("idx_user").agg(collect_list(struct(col("movie_id"),col("time"))).alias("recommendations"))
 
-        raw_rdd2.join(tmp_df2, raw_rdd2.idx_user == tmp_df2.idx_user, 'inner').drop(tmp_df2.idx_user).show(truncate=False)
-        break
-        # tmp_df2.write.\
-        #     format("org.apache.spark.sql.cassandra").\
-        #     options(table="last_watch_model", keyspace="db").\
-        #     save(mode="append")
+        # raw_rdd2.join(tmp_df2, raw_rdd2.idx_user == tmp_df2.idx_user, 'inner').drop(tmp_df2.idx_user).show(truncate=False)
+        # break
+        tmp_df2.write.\
+            format("org.apache.spark.sql.cassandra").\
+            options(table="last_watch_model", keyspace="db").\
+            save(mode="append")
