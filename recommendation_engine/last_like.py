@@ -46,24 +46,21 @@ if __name__ == '__main__':
     while True:
         current_date = getGMT()
         future_date = getNextGMT()
+        raw_rdd = sql.read.format("org.apache.spark.sql.cassandra").\
+                                load(keyspace="db", table="user_event_model")
 
-        raw_rdd1 = sql.read.format("org.apache.spark.sql.cassandra").\
-                                load(keyspace="db", table="user_event_model").\
-                                filter("time >= %s and time < %s"%(current_date,future_date))
+        raw_rdd1 = raw_rdd.filter("time >= %s and time < %s"%(current_date,future_date))
 
-        raw_rdd2 = sql.read.format("org.apache.spark.sql.cassandra").\
-                                load(keyspace="db", table="last_watch_model")
-        # raw_rdd2.show(truncate=False)
-        # break
-
+        raw_rdd2 = raw_rdd
         
         rdd1 = raw_rdd1.filter("type_event == 'rating' and value = 5").select('idx_user','idx_movie','time')
-        rdd2 = raw_rdd1.filter("type_event == 'watched' ").select('idx_user','movie_id','time')
-        # tmp_df1 = rdd1.dropDuplicates(['idx_user'])
-        # tmp_df1.write.\
-        #     format("org.apache.spark.sql.cassandra").\
-        #     options(table="last_like_model", keyspace="db").\
-        #     save(mode="append")
+        rdd2 = raw_rdd2.filter("type_event == 'watched' ").select('idx_user','movie_id','time')
+        
+        tmp_df1 = rdd1.dropDuplicates(['idx_user'])
+        tmp_df1.write.\
+            format("org.apache.spark.sql.cassandra").\
+            options(table="last_like_model", keyspace="db").\
+            save(mode="append")
         
         window = Window.partitionBy(rdd2['idx_user']).orderBy(rdd2['time'].desc())
         tmp_df2 = rdd2.select('*', rank().over(window).alias('rank'))\
